@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import 'tailwindcss';
+@plugin "daisyui";
+/* @import "./node_modules/preline/variants.css"; */
+@import './theme.css';
+@import './utilities.css';
+@import './custom.css' layer(utilities);
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+
+@theme {
+  /* color palette */
+  --color-lightGreen: #e7efe6;
+  --color-lightestGreen: #fafdfa;
+  --color-brandGreen: #4e844d;
+  --color-darkGreen: #0c440a;
+  --color-grayTitle: #6d6e71;
+  --color-grayBg: #595959;
+  --color-brandTurquoise: #026779;
+  /* fonts */
+  --font-hanken: "Hanken Grotesk", "sans-serif"; 
+  --font-anton: "Anton", "sans-serif"; 
+  --font-antonio: "Antonio", "sans-serif"; 
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
