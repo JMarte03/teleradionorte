@@ -97,12 +97,17 @@
 							Programa
 						</li>
 					</a>
-					<a class="bg-lightGreen rounded-full text-center w-1/5 py-2 font-hanken font-light text-black transition-all transition-duration-150 hover:bg-brandGreen hover:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">
-						<li>
-							Clima
-						</li>
-					</a>
-
+					<li class="dropdown w-1/5 bg-lightGreen rounded-full text-center p-2 font-hanken font-light text-black transition-all transition-duration-150 hover:bg-brandGreen hover:text-white"> 
+						<details>
+							<summary class="space-x-5">Más</summary>
+							<ul class="menu relative top-10 -right-0 dropdown-content bg-white text-black font-hanken font-light rounded-b-lg z-1 w-48 p-2">
+								<li class="hover:bg-lightestGreen active:bg-brandGreen active:text-white"><a href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a></li>
+								<li class="hover:bg-lightestGreen active:bg-brandGreen active:text-white"><a>Lotería</a></li>
+								<li class="hover:bg-lightestGreen active:bg-brandGreen active:text-white"><a>Combustible</a></li>
+								<li class="hover:bg-lightestGreen "><a>Dólar</a></li>
+							</ul>
+						</details>
+					</li>
 				</ul>
 			</section>
 			<!-- divider -->

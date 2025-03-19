@@ -51,15 +51,15 @@
 				<ul class="space-y-2">
 					<li class="flex items-center p-3 rounded-sm gap-x-3">
 						<i class='bx bx-sm'></i>
-						<p class="font-hanken font-light"><span id="time">7:00 AM - 10:00 AM</span>: Amaneciendo TRN</p>
+						<p class="font-hanken font-light"><span id="time">7:00 AM - 9:00 AM</span>: Amaneciendo TRN</p>
 					</li>
 					<li class="flex items-center p-3 rounded-sm gap-x-3">
 						<i class='bx bx-sm'></i>
-						<p class="font-hanken font-light"><span id="time">10:00 AM - 12:00 PM</span>: Documental</p>
+						<p class="font-hanken font-light"><span id="time">9:00 AM - 12:00 PM</span>: Documental</p>
 					</li>
 					<li class="flex items-center p-3 rounded-sm gap-x-3">
 						<i class='bx bx-sm'></i>
-						<p class="font-hanken font-light"><span id="time">12:00 PM</span>: La Belleza Es Mía</p>
+						<p class="font-hanken font-light"><span id="time">12:00 PM - 1:00 PM</span>: La Belleza Es Mía</p>
 					</li>
 					<li class="flex items-center p-3 rounded-sm gap-x-3">
 						<i class='bx bx-sm'></i>
@@ -67,7 +67,7 @@
 					</li>
 					<li class="flex items-center p-3 rounded-sm gap-x-">
 						<i class='bx bx-sm'></i>
-						<p class="font-hanken font-light"><span id="time">3:00 PM</span>: Tiempo de Amparo</p>
+						<p class="font-hanken font-light"><span id="time">3:00 PM - 4:00 PM</span>: Tiempo de Amparo</p>
 					</li>
 					<li class="flex items-center p-3 rounded-sm gap-x-">
 						<i class='bx bx-sm'></i>
