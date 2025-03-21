@@ -1,6 +1,7 @@
-const key = "6ViRYR2zVr5cbG4faoEYQwUGigxQfY5B";
+// Llave de la api
+const key = "6ViRYR2zVr5cbG4faoEYQwUGigxQfY5B"; 
 
-// Weather Codes
+// Códigos de los íconos y descripciones del clima (español)
 const weatherCodes = {
   1000: {
     desc: "Cielo Despejado",
@@ -109,81 +110,68 @@ const weatherCodes = {
   },
 };
 
-// LLAMADAS A LA API ---------------------------------------
+////////////////////////////////////////////////////////////////
 
-// Tiempo real (ahora)
+/* 
+  LLAMADAS A LA API 
+*/
+
+////////////////////////////////////////////////////////////////
+
+// Función para mostrar el clima en tiempo real
 function climaAhora(response) {
-    // Extract relevant data
-    const { weatherCode, humidity, temperature, precipitationProbability } = response.data.values;
-    const time = new Date(response.data.time); // Convert to Date object
-  
-    // Determine if it's day or night
-    const hour = time.getHours(); // Adjust based on your timezone if needed
-    const isDay = hour >= 6 && hour < 19; // 6 AM to 6:59 PM -> Day, else Night
-  
-    // Get weather description and icon
-    const weatherData = weatherCodes[weatherCode] || { desc: "Desconocido", iconDay: "", iconNight: "" };
-    const weatherIcon = isDay ? weatherData.iconDay : weatherData.iconNight;
-  
-    // Update UI
-    document.getElementById("now-icon").src = weatherIcon;
-    document.getElementById("now-description").textContent = weatherData.desc;
-    document.getElementById("now-temperature").textContent = `${Math.round(temperature)}°C`;
-    document.getElementById("now-precipitation").textContent = `${precipitationProbability}%`;
-    document.getElementById("now-humidity").textContent = `${humidity}%`;
+   // Obtener el primer item del array
+   const firstForecast = response.hourlyForecast[0];
+
+   if (!firstForecast) {
+       console.error("No forecast data available.");
+       return;
+   }
+
+   // Extraer información relevante
+   const { time, temperature, weatherCode, precipitationProbability, humidity } = firstForecast;
+   const date = new Date(time);
+   const hour = date.getHours() + 4;
+
+   // Determinar si es día o noche
+   const isDay = hour >= 6 && hour < 19; // 6 AM to 6:59 PM -> Day, else Night
+
+   // Obtener el ícono y la descripción
+   const weatherData = weatherCodes[weatherCode] || { desc: "Desconocido", iconDay: "", iconNight: "" };
+   const weatherIcon = isDay ? weatherData.iconDay : weatherData.iconNight;
+
+   // Actualizar Interfaz
+   document.getElementById("now-icon").src = weatherIcon;
+   document.getElementById("now-description").textContent = weatherData.desc;
+   document.getElementById("now-temperature").textContent = `${temperature}°C`;
+   document.getElementById("now-precipitation").textContent = `${Math.round(precipitationProbability)}%`;
+   document.getElementById("now-humidity").textContent = `${Math.round(humidity)}%`;
 }
 
-async function fetchClimaAhora() {
-    const apiUrl = `https://api.tomorrow.io/v4/weather/realtime?location=santo%20domingo&apikey=${key}`;
-  
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-  
-      // Format the API response to match the expected structure
-      const formattedResponse = {
-        data: {
-          time: data.data.time,
-          values: {
-            weatherCode: data.data.values.weatherCode,
-            humidity: data.data.values.humidity,
-            temperature: data.data.values.temperature,
-            precipitationProbability: data.data.values.precipitationProbability,
-          }
-        },
-      };
-  
-      climaAhora(formattedResponse);
-    } catch (error) {
-      console.error("Error fetching weather data:", error);
-    }
-}
-  
-fetchClimaAhora();
-
-// Forecast por horas (a lo largo del día)
+// Función para mostrar el clima a lo largo del día (por horas)
 function forecastDia(response) {
     const forecastData = response.hourlyForecast;
 
-    // Select the containers
+    // Seleccionar los containers 
     const mobileContainer = document.getElementById("mobile-forecast");
     const desktopContainer = document.getElementById("desktop-forecast");
 
-    // Loop through forecast data and create elements
+    // Iterar sobre la respuesta de la api y crear los items dentro de los contenedores
     forecastData.forEach(forecast => {
+        // Extraer información relevante
         const { time, temperature, weatherCode } = forecast;
 
-        // Convert time to a readable format (e.g., 3 PM)
+        // Convertir el tiempo a formato AM/PM (e.j., 3 PM)
         const date = new Date(time);
-        const hours = date.getHours();
+        const hours = date.getHours() + 4;
         const formattedTime = `${hours % 12 || 12} ${hours >= 12 ? "PM" : "AM"}`;
 
-        // Select appropriate weather icon based on time
+        // Seleccionar el ícono y la descripción dependiendo de la hora
         const isDayTime = hours >= 6 && hours <= 18; // 6 AM - 6 PM
         const weatherIcon = isDayTime ? weatherCodes[weatherCode].iconDay : weatherCodes[weatherCode].iconNight;
         const weatherDescription = weatherCodes[weatherCode]?.desc || "Desconocido";
 
-        // Create mobile forecast item
+        // Crear item para la versión móvil
         const mobileItem = document.createElement("div");
         mobileItem.className = "mobile-item group relative cursor-pointer rounded-xl p-8 space-y-3 flex-shrink-0";
         mobileItem.innerHTML = `
@@ -196,7 +184,7 @@ function forecastDia(response) {
         `;
         mobileContainer.appendChild(mobileItem);
 
-        // Create desktop forecast item
+        // Crear item para la versión desktop
         const desktopItem = document.createElement("div");
         desktopItem.className = "desktop-item flex border-b border-b-lightGreen py-6 justify-between items-center";
         desktopItem.innerHTML = `
@@ -211,8 +199,8 @@ function forecastDia(response) {
     });
 }
 
-
-async function fetchForecastDia() {
+// Función para obtener la información de la api (Tomorrow.io)
+async function fetchClimaData() {
     const options = {
         method: 'POST',
         headers: {
@@ -221,8 +209,8 @@ async function fetchForecastDia() {
           'content-type': 'application/json'
         },
         body: JSON.stringify({
-          location: '42.3478, -71.0466',
-          fields: ['temperature', 'weatherCode'],
+          location: '18.483402, -69.929611',
+          fields: ['temperature', 'weatherCode', 'humidity', 'precipitationProbability'],
           units: 'metric',
           timesteps: ['1h'],
           startTime: 'nowMinus4h',
@@ -242,20 +230,23 @@ async function fetchForecastDia() {
         hourlyForecast: data.data.timelines[0].intervals.map(interval => ({
           time: interval.startTime,
           temperature: interval.values.temperature,
-          weatherCode: interval.values.weatherCode
+          weatherCode: interval.values.weatherCode,
+          humidity: interval.values.humidity,
+          precipitationProbability: interval.values.precipitationProbability
         }))
       };
       
       forecastDia(formattedResponse);
+      climaAhora(formattedResponse)
     } catch (error) {
       console.error("Error fetching weather data:", error);
     }
 }
 
-fetchForecastDia();
+fetchClimaData();
 
   
-// Pronóstico de los próximos 6 días (Tomorrow.io widget)
+// Pronóstico de los próximos 6 días (Widget de Tomorrow.io)
 (function (d, s, id) {
   if (d.getElementById(id)) {
     if (window.__TOMORROW__) {

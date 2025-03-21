@@ -2339,6 +2339,11 @@
       padding-block: calc(var(--spacing) * 12);
     }
   }
+  .md\:text-left {
+    @media (width >= 600px) {
+      text-align: left;
+    }
+  }
   .md\:text-3xl {
     @media (width >= 600px) {
       font-size: var(--text-3xl);

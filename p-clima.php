@@ -29,11 +29,11 @@ get_header();
                 <div class="flex flex-col gap-x-18 gap-y-8 md:flex-row md:items-center md:m-auto">
                     <!-- left -->
                     <div class="space-y-8">
-                            <div class="flex items-center gap-x-5">
+                            <div class="flex flex-col justify-center items-center gap-y-5 gap-x-5 md:flex-row md:justify-start md:items-center">
                                 <img id="now-icon" src="" alt="Icono del clima" class="w-12 lg:w-20 h-auto">
                                 <span class="font-anton text-grayTitle text-2xl "><?php echo "$day de $month";?></span>
                             </div>
-                            <span id="now-description" class="block font-hanken font-semibold text-2xl text-grayBg"></span>
+                            <span id="now-description" class="text-center block font-hanken font-semibold text-2xl text-grayBg md:text-left"></span>
                             <span class="block font-hanken text-sm text-grayBg ">Santo Domingo, República Dominicana</span>
                     </div>
                     <!-- right -->
