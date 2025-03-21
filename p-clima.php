@@ -30,35 +30,33 @@ get_header();
                     <!-- left -->
                     <div class="space-y-8">
                             <div class="flex items-center gap-x-5">
-                                <img src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>" alt="Logo de Teleradio Norte" class="w-12 lg:w-20 h-auto">
+                                <img id="now-icon" src="" alt="Icono del clima" class="w-12 lg:w-20 h-auto">
                                 <span class="font-anton text-grayTitle text-2xl "><?php echo "$day de $month";?></span>
                             </div>
-                            <span class="block font-hanken font-semibold text-2xl text-grayBg ">Mayormente Soleado</span>
+                            <span id="now-description" class="block font-hanken font-semibold text-2xl text-grayBg"></span>
                             <span class="block font-hanken text-sm text-grayBg ">Santo Domingo, República Dominicana</span>
                     </div>
-                    <!-- Divider -->
-                     <div class="hidden lg:hidden"></div>
                     <!-- right -->
                     <div class="flex items-center flex-col gap-x-8 gap-y-10 md:items-start">
                             <div class="space-y-2">
                                 <h3 class="font-hanken font-semibold text-grayBg">Temperatura</h3>
                                 <div class="flex justify-center items-center gap-x-3 md:justify-start">
-                                    <img src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>" alt="Logo de Teleradio Norte" class="w-6 h-auto">
-                                    <span class="font-hanken font-light text-grayBg">31 °C</span>
+                                    <img src="<?php echo get_theme_file_uri('/resources/img/temperature.png'); ?>" alt="Logo de Teleradio Norte" class="w-4 h-auto">
+                                    <span id="now-temperature" class="font-hanken font-light text-grayBg"></span>
                                 </div>
                             </div>
                             <div class="space-y-2">
                                 <h3 class="font-hanken font-semibold text-grayBg">Precipitaciones</h3>
                                 <div class="flex justify-center items-center gap-x-3 md:justify-start">
-                                    <img src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>" alt="Logo de Teleradio Norte" class="w-6 h-auto">
-                                    <span class="font-hanken font-light text-grayBg">20%</span>
+                                    <img src="<?php echo get_theme_file_uri('/resources/img/precip.png'); ?>" alt="Logo de Teleradio Norte" class="w-4 h-auto">
+                                    <span id="now-precipitation" class="font-hanken font-light text-grayBg"></span>
                                 </div>
                             </div>
                             <div class="space-y-2">
                                 <h3 class="font-hanken font-semibold text-grayBg">Humedad</h3>
                                 <div class="flex justify-center items-center gap-x-3 md:justify-start">
-                                    <img src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>" alt="Logo de Teleradio Norte" class="w-6 h-auto">
-                                    <span class="font-hanken font-light text-grayBg">20%</span>
+                                    <img src="<?php echo get_theme_file_uri('/resources/img/humidity.png'); ?>" alt="Logo de Teleradio Norte" class="w-4 h-auto">
+                                    <span id="now-humidity" class="font-hanken font-light text-grayBg"></span>
                                 </div>
                             </div>
                     </div>
@@ -66,161 +64,13 @@ get_header();
             </div>
             <!-- Display a lo largo del día (móvil sm-md)-->
             <div class="flex md:justify-center lg:hidden">
-                <div class="overflow-x-scroll overflow-y-visible max-w-6xl flex space-x-4 py-4 md:">
-                    <!-- Item -->
-                    <div class="group relative cursor-pointer rounded-xl p-8 space-y-3 flex-shrink-0">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" />
-                        <span class="font-hanken font-semibold text-grayBg">1pm</span>
+                <div id="mobile-forecast" class="overflow-x-scroll overflow-y-visible max-w-6xl flex space-x-4 py-4 md:">
                     
-                        <!-- Hover Card -->
-                        <div class="absolute left-[1px] top-[68px] z-9 w-fit bg-white shadow-xs rounded-sm p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-semibold text-grayTitle">31°C</p>
-                            <p class="text-xs text-grayTitle">Mayormente soleado</p>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <div class="group relative cursor-pointer rounded-xl p-8 space-y-3 flex-shrink-0">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" />
-                        <span class="font-hanken font-semibold text-grayBg">2pm</span>
-                    
-                        <!-- Hover Card -->
-                        <div class="absolute left-[1px] top-[68px] z-9 w-fit bg-white shadow-xs rounded-sm p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-semibold text-grayTitle">31°C</p>
-                            <p class="text-xs text-grayTitle">Mayormente soleado</p>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <div class="group relative cursor-pointer rounded-xl p-8 space-y-3 flex-shrink-0">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" />
-                        <span class="font-hanken font-semibold text-grayBg">3pm</span>
-                    
-                        <!-- Hover Card -->
-                        <div class="absolute left-[1px] top-[68px] z-9 w-fit bg-white shadow-xs rounded-sm p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-semibold text-grayTitle">31°C</p>
-                            <p class="text-xs text-grayTitle">Mayormente soleado</p>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <div class="group relative cursor-pointer rounded-xl p-8 space-y-3 flex-shrink-0">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" />
-                        <span class="font-hanken font-semibold text-grayBg">4pm</span>
-                    
-                        <!-- Hover Card -->
-                        <div class="absolute left-[1px] top-[68px] z-9 w-fit bg-white shadow-xs rounded-sm p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-semibold text-grayTitle">31°C</p>
-                            <p class="text-xs text-grayTitle">Mayormente soleado</p>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <div class="group relative cursor-pointer rounded-xl p-8 space-y-3 flex-shrink-0">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" />
-                        <span class="font-hanken font-semibold text-grayBg">5pm</span>
-                    
-                        <!-- Hover Card -->
-                        <div class="absolute left-[1px] top-[68px] z-9 w-fit bg-white shadow-xs rounded-sm p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-semibold text-grayTitle">31°C</p>
-                            <p class="text-xs text-grayTitle">Mayormente soleado</p>
-                        </div>
-                    </div>
-                    <!-- Item -->
-                    <div class="group relative cursor-pointer rounded-xl p-8 space-y-3 flex-shrink-0">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" />
-                        <span class="font-hanken font-semibold text-grayBg">6pm</span>
-                    
-                        <!-- Hover Card -->
-                        <div class="absolute left-[1px] top-[68px] z-9 w-fit bg-white shadow-xs rounded-sm p-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-sm font-semibold text-grayTitle">31°C</p>
-                            <p class="text-xs text-grayTitle">Mayormente soleado</p>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- Display a lo largo del día (lg)-->
-            <div class="hidden flex-grow max-h-82 flex-col overflow-y-scroll px-8 pb-2 shadow-sm rounded-xl lg:flex">
-                <!-- Item -->
-                <div class="flex border-b border-b-lightGreen py-6 justify-between items-center">
-                    <div class="flex items-center gap-x-2">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" 
-                        />
-                        <span class="font-hanken font-semibold text-grayBg">1pm</span>
-                    </div>
-                    <span class="font-hanken text-grayBg">Mayormente soleado</span>
-                    <span class="font-hanken text-grayBg">31°C</span>
-                </div>   
-                <!-- Item -->
-                <div class="flex border-b border-b-lightGreen py-6 justify-between items-center">
-                    <div class="flex items-center gap-x-2">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" 
-                        />
-                        <span class="font-hanken font-semibold text-grayBg">2pm</span>
-                    </div>
-                    <span class="font-hanken text-grayBg">Mayormente soleado</span>
-                    <span class="font-hanken text-grayBg">31°C</span>
-                </div>
-                <!-- Item -->
-                <div class="flex border-b border-b-lightGreen py-6 justify-between items-center">
-                    <div class="flex items-center gap-x-2">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" 
-                        />
-                        <span class="font-hanken font-semibold text-grayBg">3pm</span>
-                    </div>
-                    <span class="font-hanken text-grayBg">Mayormente soleado</span>
-                    <span class="font-hanken text-grayBg">31°C</span>
-                </div>
-                <!-- Item -->
-                <div class="flex border-b border-b-lightGreen py-6 justify-between items-center">
-                    <div class="flex items-center gap-x-2">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" 
-                        />
-                        <span class="font-hanken font-semibold text-grayBg">4pm</span>
-                    </div>
-                    <span class="font-hanken text-grayBg">Mayormente soleado</span>
-                    <span class="font-hanken text-grayBg">31°C</span>
-                </div>
-                <!-- Item -->
-                <div class="flex border-b border-b-lightGreen py-6 justify-between items-center">
-                    <div class="flex items-center gap-x-2">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" 
-                        />
-                        <span class="font-hanken font-semibold text-grayBg">5pm</span>
-                    </div>
-                    <span class="font-hanken text-grayBg">Mayormente soleado</span>
-                    <span class="font-hanken text-grayBg">31°C</span>
-                </div>
-                <!-- Item -->
-                <div class="flex border-b border-b-lightGreen py-6 justify-between items-center">
-                    <div class="flex items-center gap-x-2">
-                        <img
-                            src="<?php echo get_theme_file_uri('/resources/img/sample_weather.png'); ?>"
-                            class="w-7" 
-                        />
-                        <span class="font-hanken font-semibold text-grayBg">6pm</span>
-                    </div>
-                    <span class="font-hanken text-grayBg">Mayormente soleado</span>
-                    <span class="font-hanken text-grayBg">31°C</span>
-                </div>
+            <div id="desktop-forecast" class="hidden flex-grow max-h-82 flex-col overflow-y-scroll px-8 pb-2 shadow-sm rounded-xl lg:flex">
+                   
             </div>
         </section>
     </section>

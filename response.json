@@ -1,0 +1,92 @@
+{
+    "data": {
+      "timelines": [
+        {
+          "timestep": "1h",
+          "endTime": "2025-03-21T01:00:00Z",
+          "startTime": "2025-03-20T15:00:00Z",
+          "intervals": [
+            {
+              "startTime": "2025-03-20T15:00:00Z",
+              "values": {
+                "temperature": 5.3,
+                "weatherCode": 1001
+              }
+            },
+            {
+              "startTime": "2025-03-20T16:00:00Z",
+              "values": {
+                "temperature": 5.7,
+                "weatherCode": 1001
+              }
+            },
+            {
+              "startTime": "2025-03-20T17:00:00Z",
+              "values": {
+                "temperature": 6.5,
+                "weatherCode": 2100
+              }
+            },
+            {
+              "startTime": "2025-03-20T18:00:00Z",
+              "values": {
+                "temperature": 6.9,
+                "weatherCode": 1001
+              }
+            },
+            {
+              "startTime": "2025-03-20T19:00:00Z",
+              "values": {
+                "temperature": 7.9,
+                "weatherCode": 1001
+              }
+            },
+            {
+              "startTime": "2025-03-20T20:00:00Z",
+              "values": {
+                "temperature": 11.1,
+                "weatherCode": 1001
+              }
+            },
+            {
+              "startTime": "2025-03-20T21:00:00Z",
+              "values": {
+                "temperature": 10.8,
+                "weatherCode": 1001
+              }
+            },
+            {
+              "startTime": "2025-03-20T22:00:00Z",
+              "values": {
+                "temperature": 10.3,
+                "weatherCode": 1001
+              }
+            },
+            {
+              "startTime": "2025-03-20T23:00:00Z",
+              "values": {
+                "temperature": 9.5,
+                "weatherCode": 1001
+              }
+            },
+            {
+              "startTime": "2025-03-21T00:00:00Z",
+              "values": {
+                "temperature": 8.5,
+                "weatherCode": 2000
+              }
+            },
+            {
+              "startTime": "2025-03-21T01:00:00Z",
+              "values": {
+                "temperature": 8,
+                "weatherCode": 2000
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+
+

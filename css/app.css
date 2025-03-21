@@ -1489,20 +1489,6 @@
       gap: calc(0.25rem * 4);
     }
   }
-  .alignfull {
-    width: 100vw;
-    margin: 0 calc(50% - 50vw) !important;
-  }
-  .alignwide {
-    width: calc(200px + var(--wp--style--global--wide-size));
-    img {
-      width: 100%;
-      margin: 0 -100px 0 -100px !important;
-    }
-  }
-  .aligncenter {
-    margin: 0.5rem auto !important;
-  }
   .m-8 {
     margin: calc(var(--spacing) * 8);
   }
@@ -1566,12 +1552,6 @@
   }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
-  }
-  .alignnone {
-    height: auto;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
   }
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
@@ -1642,9 +1622,6 @@
   .h-auto {
     height: auto;
   }
-  .max-h-80 {
-    max-height: calc(var(--spacing) * 80);
-  }
   .max-h-82 {
     max-height: calc(var(--spacing) * 82);
   }
@@ -1660,8 +1637,8 @@
   .w-1\/5 {
     width: calc(1/5 * 100%);
   }
-  .w-6 {
-    width: calc(var(--spacing) * 6);
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
   .w-7 {
     width: calc(var(--spacing) * 7);
@@ -1740,14 +1717,8 @@
   .flex-col {
     flex-direction: column;
   }
-  .items-baseline {
-    align-items: baseline;
-  }
   .items-center {
     align-items: center;
-  }
-  .justify-around {
-    justify-content: space-around;
   }
   .justify-between {
     justify-content: space-between;
@@ -1915,18 +1886,11 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
-  .border-l {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 1px;
-  }
   .border-brandGreen {
     border-color: var(--color-brandGreen);
   }
   .border-lightGreen {
     border-color: var(--color-lightGreen);
-  }
-  .border-lightestGreen {
-    border-color: var(--color-lightestGreen);
   }
   .border-primary {
     border-color: var(--color-primary);
@@ -1939,12 +1903,6 @@
   }
   .border-b-lightGreen {
     border-bottom-color: var(--color-lightGreen);
-  }
-  .border-b-lightestGreen {
-    border-bottom-color: var(--color-lightestGreen);
-  }
-  .border-l-lightestGreen {
-    border-left-color: var(--color-lightestGreen);
   }
   .bg-black\/50 {
     background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
@@ -2009,9 +1967,6 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
-  .px-10 {
-    padding-inline: calc(var(--spacing) * 10);
-  }
   .px-12 {
     padding-inline: calc(var(--spacing) * 12);
   }
@@ -2035,9 +1990,6 @@
   }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
-  }
-  .pb-4 {
-    padding-bottom: calc(var(--spacing) * 4);
   }
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
