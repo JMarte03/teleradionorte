@@ -163,7 +163,8 @@ function forecastDia(response) {
 
         // Convertir el tiempo a formato AM/PM (e.j., 3 PM)
         const date = new Date(time);
-        const hours = date.getHours() + 4;
+        const hours = date.getHours();
+        console.log(hours)
         const formattedTime = `${hours % 12 || 12} ${hours >= 12 ? "PM" : "AM"}`;
 
         // Seleccionar el ícono y la descripción dependiendo de la hora
@@ -213,7 +214,7 @@ async function fetchClimaData() {
           fields: ['temperature', 'weatherCode', 'humidity', 'precipitationProbability'],
           units: 'metric',
           timesteps: ['1h'],
-          startTime: 'nowMinus4h',
+          startTime: 'now',
           endTime: 'nowPlus6h',
           dailyStartHour: 6
         })
