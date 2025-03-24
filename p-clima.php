@@ -6,6 +6,7 @@ get_header();
 ?>
 
 <?php
+    date_default_timezone_set('America/Santo_Domingo');
     $date = new DateTime();
     $months = [
         "January" => "Enero", "February" => "Febrero", "March" => "Marzo",
