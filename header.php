@@ -114,6 +114,4 @@
 			<div class="hidden w-full border-b border-b-lightGreen mt-8 lg:block"></div>
 		</nav>
 	</header>
-	
-	<script src="<?php echo get_theme_file_uri('/resources/js/preline.js'); ?>"></script>
 

@@ -15,9 +15,9 @@
 		<section class="py-8 px-12 flex flex-col gap-y-5 bg-darkGreen md:flex-row md:justify-between md:items-center">
 			<p class="text-white font-hanken font-light">&copy; <?php echo date_i18n( 'Y' );?> - Teleradionorte. Todos los derechos reservados.</p>
 			<div class="space-x-1 text-white">
-				<i class='bx bxl-twitter bx-sm transition-all transition-duration-300 cursor-pointer hover:text-lightGreen'></i>
-				<i class='bx bxl-facebook bx-sm transition-all transition-duration-300 cursor-pointer hover:text-lightGreen'></i>
-				<i class='bx bxl-instagram-alt bx-sm transition-all transition-duration-300 cursor-pointer hover:text-lightGreen'></i>
+				<a href="https://x.com/teleradionorte1"><i class='bx bxl-twitter bx-sm transition-all transition-duration-300 cursor-pointer hover:text-lightGreen'></i></a>
+				<a href="https://www.facebook.com/teleradionorte?ref=embed_page"><i class='bx bxl-facebook bx-sm transition-all transition-duration-300 cursor-pointer hover:text-lightGreen'></i></a>
+				<a href="https://www.instagram.com/teleradionorte/"><i class='bx bxl-instagram-alt bx-sm transition-all transition-duration-300 cursor-pointer hover:text-lightGreen'></i></a>
 			</div>	
 		</section>
 	</footer>
@@ -26,5 +26,6 @@
 	<script src="<?php echo get_theme_file_uri('/resources/js/clima.js'); ?>"></script>
 	<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 </html>

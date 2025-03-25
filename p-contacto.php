@@ -19,9 +19,9 @@ get_header();
     </section>
     <div class="w-full border-b border-lightGreen my-16"></div>
     <!-- Contact info -->
-    <section>
+    <section class="flex flex-col gap-x-16 lg:flex-row">
         <!-- Form -->
-        <form action="" class="space-y-4">
+        <form action="" class="space-y-4 lg:basis-1/2">
             <h2 class="font-hanken font-semibold text-grayTitle text-xl">Envíanos un mensaje</h2>
             <fieldset class="fieldset">
                 <label for="name" class="font-hanken text-grayTitle text-md mb-2">Nombre y Apellido</label>
@@ -39,38 +39,43 @@ get_header();
                 <label for="comentario" class="font-hanken text-grayTitle text-md mb-2">Comentario</label>
                 <textarea id="comentario" name="comentario" class="textarea w-full bg-stone-50 h-24 text-grayTitle"></textarea>
             </fieldset>
+            <input type="submit" class="btn mt-2 shadow-none w-full font-hanken text-white bg-darkGreen" value="Enviar Mensaje">
         </form>
         <!-- Separator -->
-        <div class="w-full border-b border-lightGreen my-16 md:hidden"></div>
+        <div class="w-full border-b border-lightGreen my-16 lg:hidden"></div>
         <!-- More info -->
-        <section class="">
-            <div>
-                <h2 class="font-hanken font-semibold text-grayTitle text-xl mb-4">Síguenos en nuestras redes sociales</h2>
-                <ul class="space-y-1">
-                    <li>
-                        <a href="#" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-facebook-circle text-grayTitle'></i> teleradionorte</a>
-                    </li>
-                    <li>
-                        <a href="#" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-twitter text-grayTitle'></i> @teleradionorte</a>
-                    </li>
-                    <li>
-                        <a href="#" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-instagram-alt text-grayTitle'></i> @teleradionorte1</a>
-                    </li>
-                </ul>
+        <section class="flex flex-col md:flex-row lg:flex-col gap-y-10 gap-x-16">
+            <div class="basis-1/2 space-y-10">
+                <div>
+                    <h2 class="font-hanken font-semibold text-grayTitle text-xl mb-4">Síguenos en nuestras redes sociales</h2>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="https://www.facebook.com/teleradionorte?ref=embed_page" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-facebook-circle text-grayTitle'></i> teleradionorte</a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/teleradionorte1" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-twitter text-grayTitle'></i> @teleradionorte</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/teleradionorte/" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-instagram-alt text-grayTitle'></i> @teleradionorte1</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-hanken font-semibold text-grayTitle text-xl mb-4">Envíanos un correo</h2>
+                    <a href="mailto:teleradionorte@gmail.com" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxs-envelope text-grayTitle'></i> teleradionorte@hotmail.com</a>
+                </div>
             </div>
-            <div>
-                <h2 class="font-hanken font-semibold text-grayTitle text-xl mb-4">Síguenos en nuestras redes sociales</h2>
-                <ul class="space-y-1">
-                    <li>
-                        <a href="#" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-facebook-circle text-grayTitle'></i> teleradionorte</a>
-                    </li>
-                    <li>
-                        <a href="#" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-twitter text-grayTitle'></i> @teleradionorte</a>
-                    </li>
-                    <li>
-                        <a href="#" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-instagram-alt text-grayTitle'></i> @teleradionorte1</a>
-                    </li>
-                </ul>
+            <div class="basis-1/2 space-y-10">
+                <div class="space-y-3">
+                    <h2 class="font-hanken font-semibold text-grayTitle text-xl mb-4">Llámanos</h2>
+                    <p class="text-grayTitle font-hanken font-light">Disponibles Lunes a Viernes de 8 A.M a 5 P.M</p>
+                    <span class="inline-flex items-center gap-x-2 font-hanken  text-grayTitle"><i class='bx bxs-phone text-grayTitle'></i> +1 (809) 590-0144</span>
+                </div>
+                <div class="space-y-3">
+                    <h2 class="font-hanken font-semibold text-grayTitle text-xl mb-4">Visítanos</h2>
+                    <p class="text-grayTitle font-hanken font-light">Estamos ubicados en Santo Domingo Norte, Sector Los Palmares</p>
+                    <a href="https://maps.app.goo.gl/LfPSG88UQsTnt5XDA" class="inline-flex items-center gap-x-2 font-hanken text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxs-map text-grayTitle'></i> C. Amín Abel 3, S.D. 11404</a>
+                </div>
             </div>
         </section>
     </section>
