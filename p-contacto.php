@@ -21,11 +21,11 @@ get_header();
     <!-- Contact info -->
     <section class="flex flex-col gap-x-16 lg:flex-row">
         <!-- Form -->
-        <form action="" class="space-y-4 lg:basis-1/2">
+        <form class="space-y-4 lg:basis-1/2">
             <h2 class="font-hanken font-semibold text-grayTitle text-xl">Envíanos un mensaje</h2>
             <fieldset class="fieldset">
-                <label for="name" class="font-hanken text-grayTitle text-md mb-2">Nombre y Apellido</label>
-                <input id="name" name="name" type="text" class="input w-full text-grayTitle bg-stone-50 border" />
+                <label for="nombre" class="font-hanken text-grayTitle text-md mb-2">Nombre y Apellido</label>
+                <input id="nombre" name="nombre" type="text" class="input w-full text-grayTitle bg-stone-50 border" />
             </fieldset>
             <fieldset class="fieldset">
                 <label for="email" class="font-hanken text-grayTitle text-md mb-2">Correo electrónico</label>
@@ -39,7 +39,7 @@ get_header();
                 <label for="comentario" class="font-hanken text-grayTitle text-md mb-2">Comentario</label>
                 <textarea id="comentario" name="comentario" class="textarea w-full bg-stone-50 h-24 text-grayTitle"></textarea>
             </fieldset>
-            <input type="submit" class="btn mt-2 shadow-none w-full font-hanken text-white bg-darkGreen" value="Enviar Mensaje">
+            <button id="enviar-mensaje" type="submit" class="btn mt-2 shadow-none w-full font-hanken text-white bg-darkGreen">Enviar Mensaje</button>
         </form>
         <!-- Separator -->
         <div class="w-full border-b border-lightGreen my-16 lg:hidden"></div>

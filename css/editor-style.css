@@ -777,10 +777,6 @@
     -moz-column-gap: calc(var(--spacing) * 8);
          column-gap: calc(var(--spacing) * 8);
   }
-  .gap-x-10 {
-    -moz-column-gap: calc(var(--spacing) * 10);
-         column-gap: calc(var(--spacing) * 10);
-  }
   .gap-x-12 {
     -moz-column-gap: calc(var(--spacing) * 12);
          column-gap: calc(var(--spacing) * 12);
@@ -1273,11 +1269,6 @@
   .md\:flex {
     @media (width >= 600px) {
       display: flex;
-    }
-  }
-  .md\:hidden {
-    @media (width >= 600px) {
-      display: none;
     }
   }
   .md\:w-1\/2 {
