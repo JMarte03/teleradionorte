@@ -7,7 +7,7 @@
 			</div>
 			<form action="" class="w-full space-y-2 lg:w-auto">
 				<input placeholder="Correo electrónico" type="email" class="input w-full p-6 bg-white text-gray-500">
-				<button type="submit" class="btn w-full p-6 shadow-none bg-darkGreen text-white font-hanken transition-all transition-duration-150 hover:bg-black">Suscribirse</button>
+				<button type="submit" class="btn w-full border-0 p-6 shadow-none bg-darkGreen text-white font-hanken transition-all transition-duration-150 hover:bg-darkGreen/80">Suscribirse</button>
 			</form>
 			</div>
 		</section>

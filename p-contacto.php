@@ -21,25 +21,31 @@ get_header();
     <!-- Contact info -->
     <section class="flex flex-col gap-x-16 lg:flex-row">
         <!-- Form -->
-        <form class="space-y-4 lg:basis-1/2">
+        <form id="contact-form" action="" class="space-y-4 lg:basis-1/2">
             <h2 class="font-hanken font-semibold text-grayTitle text-xl">Envíanos un mensaje</h2>
             <fieldset class="fieldset">
-                <label for="nombre" class="font-hanken text-grayTitle text-md mb-2">Nombre y Apellido</label>
-                <input id="nombre" name="nombre" type="text" class="input w-full text-grayTitle bg-stone-50 border" />
+                <label for="name" class="font-hanken text-grayTitle text-md mb-2">Nombre y Apellido</label>
+                <input id="name" name="name" type="text" class="input w-full text-grayTitle bg-stone-50 border" />
             </fieldset>
             <fieldset class="fieldset">
                 <label for="email" class="font-hanken text-grayTitle text-md mb-2">Correo electrónico</label>
                 <input id="email" name="email" type="email" class="input w-full text-grayTitle bg-stone-50 border" />
             </fieldset>
             <fieldset class="fieldset">
-                <label for="asunto" class="font-hanken text-grayTitle text-md mb-2">Asunto</label>
-                <input id="asunto" name="asunto" type="text" class="input w-full text-grayTitle bg-stone-50 border" />
+                <label for="subject" class="font-hanken text-grayTitle text-md mb-2">Asunto</label>
+                <input id="subject" name="subject" type="text" class="input w-full text-grayTitle bg-stone-50 border" />
             </fieldset>
             <fieldset class="fieldset">
-                <label for="comentario" class="font-hanken text-grayTitle text-md mb-2">Comentario</label>
-                <textarea id="comentario" name="comentario" class="textarea w-full bg-stone-50 h-24 text-grayTitle"></textarea>
+                <label for="message" class="font-hanken text-grayTitle text-md mb-2">Comentario</label>
+                <textarea id="message" name="message" class="textarea w-full bg-stone-50 h-24 text-grayTitle"></textarea>
             </fieldset>
-            <button id="enviar-mensaje" type="submit" class="btn mt-2 shadow-none w-full font-hanken text-white bg-darkGreen">Enviar Mensaje</button>
+            <button type="submit" class="btn mt-2 shadow-none w-full font-hanken text-white bg-darkGreen transition-all transition-duration-150 hover:bg-darkGreen/90">Enviar Mensaje</button>
+            <div id="alert-message" role="alert" class="hidden alert alert-succes rounded-sm bg-lightGreen shadow-none border-0 text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Su mensaje ha sido enviado.</span>
+            </div>
         </form>
         <!-- Separator -->
         <div class="w-full border-b border-lightGreen my-16 lg:hidden"></div>
