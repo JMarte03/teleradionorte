@@ -1944,9 +1944,6 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .rounded-md {
-    border-radius: var(--radius-md);
-  }
   .rounded-none {
     border-radius: 0;
   }
@@ -1986,11 +1983,6 @@
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
-  }
-  .alert-success {
-    border-color: var(--color-success);
-    color: var(--color-success-content);
-    --alert-color: var(--color-success);
   }
   .border-brandGreen {
     border-color: var(--color-brandGreen);
@@ -2294,24 +2286,10 @@
       }
     }
   }
-  .hover\:bg-black {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-black);
-      }
-    }
-  }
   .hover\:bg-brandGreen {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-brandGreen);
-      }
-    }
-  }
-  .hover\:bg-darkGreen\/50 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in oklab, var(--color-darkGreen) 50%, transparent);
       }
     }
   }
