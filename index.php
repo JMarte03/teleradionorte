@@ -32,7 +32,7 @@
 <main class="pb-8 px-12 bg-white">
 	<!-- Sección programa -->
 	<section>
-		<div class="ctn relative z-10">
+		<div class="ctn  z-10">
 			<video id="player" controls crossorigin playsinline class="relative aspect-video max-h-96">
 				<source src="https://angelistic.live:3785/hybrid/play.m3u8" type="application/vnd.apple.mpegurl">
 				<a>Video Oynatılamıyor</a>

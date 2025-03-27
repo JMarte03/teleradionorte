@@ -202,49 +202,66 @@ function forecastDia(response) {
 
 // Función para obtener la información de la api (Tomorrow.io)
 async function fetchClimaData() {
-    const options = {
-        method: 'POST',
-        headers: {
-          accept: 'application/json',
-          'Accept-Encoding': 'deflate, gzip, br',
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({
-          location: '18.483402, -69.929611',
-          fields: ['temperature', 'weatherCode', 'humidity', 'precipitationProbability'],
-          units: 'metric',
-          timesteps: ['1h'],
-          startTime: 'now',
-          endTime: 'nowPlus6h',
-          dailyStartHour: 6
-        })
-    };    
+  const cacheKey = "weatherData";
+  const cacheExpiration = 60 * 60 * 1000; // 1 hora en milisegundos
+  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
 
-    const apiUrl = `https://api.tomorrow.io/v4/timelines?apikey=${key}`;
-  
-    try {
+  // Verificar si hay datos en caché y si aún son válidos
+  if (cachedData && (Date.now() - cachedData.timestamp < cacheExpiration)) {
+      forecastDia(cachedData.data);
+      climaAhora(cachedData.data);
+      return;
+  }
+
+  const options = {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'Accept-Encoding': 'deflate, gzip, br',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        location: '18.483402, -69.929611',
+        fields: ['temperature', 'weatherCode', 'humidity', 'precipitationProbability'],
+        units: 'metric',
+        timesteps: ['1h'],
+        startTime: 'now',
+        endTime: 'nowPlus6h',
+        dailyStartHour: 6
+      })
+  };    
+
+  const apiUrl = `https://api.tomorrow.io/v4/timelines?apikey=${key}`;
+
+  try {
       const response = await fetch(apiUrl, options);
       const data = await response.json();
-  
-      // Format the API response to match the expected structure
+
+      // Formatear los datos para que coincidan con la estructura esperada
       const formattedResponse = {
-        hourlyForecast: data.data.timelines[0].intervals.map(interval => ({
-          time: interval.startTime,
-          temperature: interval.values.temperature,
-          weatherCode: interval.values.weatherCode,
-          humidity: interval.values.humidity,
-          precipitationProbability: interval.values.precipitationProbability
-        }))
+          hourlyForecast: data.data.timelines[0].intervals.map(interval => ({
+              time: interval.startTime,
+              temperature: interval.values.temperature,
+              weatherCode: interval.values.weatherCode,
+              humidity: interval.values.humidity,
+              precipitationProbability: interval.values.precipitationProbability
+          }))
       };
-      
+
+      // Guardar en localStorage con la marca de tiempo actual
+      localStorage.setItem(cacheKey, JSON.stringify({ data: formattedResponse, timestamp: Date.now() }));
+
+      // Actualizar la interfaz con los nuevos datos
       forecastDia(formattedResponse);
-      climaAhora(formattedResponse)
-    } catch (error) {
+      climaAhora(formattedResponse);
+  } catch (error) {
       console.error("Error fetching weather data:", error);
-    }
+  }
 }
 
+// Ejecutar la función
 fetchClimaData();
+
 
   
 // Pronóstico de los próximos 6 días (Widget de Tomorrow.io)

@@ -41,7 +41,17 @@
 								<div class="w-full border-b border-b-lightGreen my-8"></div>
 								<li><a href="<?php echo esc_url(get_permalink(get_page_by_path('noticias'))); ?>" class="hover:px-8 font-hanken font-light text-black text-lg rounded-full transition-all transition-duration-150 hover:bg-brandGreen hover:text-white">Noticias</a></li>
 								<li><a href="<?php echo esc_url(get_permalink(get_page_by_path('programa'))); ?>" class="hover:px-8 font-hanken font-light text-black text-lg rounded-full transition-all transition-duration-150 hover:bg-brandGreen hover:text-white">Programa</a></li>
-								<li><a href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>" class="hover:px-8 font-hanken font-light text-black text-lg rounded-full transition-all transition-duration-150 hover:bg-brandGreen hover:text-white">Clima</a></li>
+								<li>
+									<button class="hover:px-8 text-lg rounded-full transition-duration-150 hover:bg-brandGreen hover:text-white group relative w-full text-left pl-3 font-hanken font-light text-black transition-all transition-duration-150"> 
+										Más
+										<div class="w-full absolute top-full right-0 p-2 bg-lightestGreen shadow-xm text-black font-hanken font-light rounded-b-lg scale-y-0 group-hover:scale-y-100 origin-top duration-200 z-50">
+											<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a>
+											<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('combustible'))); ?>">Combustible</a>
+											<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('loteria'))); ?>">Lotería</a>
+											<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('dolar'))); ?>">Dólar</a>
+										</div>
+									</button>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -97,17 +107,15 @@
 							Programa
 						</li>
 					</a>
-					<li class="dropdown w-1/5 bg-lightGreen rounded-full text-center p-2 font-hanken font-light text-black transition-all transition-duration-150 hover:bg-brandGreen hover:text-white"> 
-						<details>
-							<summary class="space-x-5">Más</summary>
-							<ul class="menu relative top-10 -right-0 dropdown-content bg-white text-black font-hanken font-light rounded-b-lg z-1 w-48 p-2">
-								<li class="hover:bg-lightestGreen active:bg-brandGreen active:text-white"><a href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a></li>
-								<li class="hover:bg-lightestGreen active:bg-brandGreen active:text-white"><a>Lotería</a></li>
-								<li class="hover:bg-lightestGreen active:bg-brandGreen active:text-white"><a>Combustible</a></li>
-								<li class="hover:bg-lightestGreen "><a>Dólar</a></li>
-							</ul>
-						</details>
-					</li>
+					<button class="group relative w-1/5 bg-lightGreen rounded-full text-center p-2 font-hanken font-light text-black transition-all transition-duration-150 hover:bg-brandGreen hover:text-white z-1"> 
+						Más
+						<div class="w-full absolute top-full right-0 p-2 bg-lightestGreen shadow-xm text-black font-hanken font-light rounded-b-lg scale-y-0 group-hover:scale-y-100 origin-top duration-200 z-50">
+							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a>
+							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('combustible'))); ?>">Combustible</a>
+							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('loteria'))); ?>">Lotería</a>
+							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('dolar'))); ?>">Dólar</a>
+						</div>
+					</button>
 				</ul>
 			</section>
 			<!-- divider -->
