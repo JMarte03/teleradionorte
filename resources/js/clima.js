@@ -109,14 +109,8 @@ const weatherCodes = {
       "https://github.com/Tomorrow-IO-API/tomorrow-weather-codes/blob/master/V2_icons/large/png/80000_tstorm_large.png?raw=true",
   },
 };
-
-////////////////////////////////////////////////////////////////
-
-/* 
-  LLAMADAS A LA API 
-*/
-
-////////////////////////////////////////////////////////////////
+ 
+///////////////////////// CONSUMO DE LA API /////////////////////////////
 
 // Función para mostrar el clima en tiempo real
 function climaAhora(response) {
@@ -131,7 +125,7 @@ function climaAhora(response) {
    // Extraer información relevante
    const { time, temperature, weatherCode, precipitationProbability, humidity } = firstForecast;
    const date = new Date(time);
-   const hour = date.getHours() + 4;
+   const hour = date.getUTCHours();
 
    // Determinar si es día o noche
    const isDay = hour >= 6 && hour < 19; // 6 AM to 6:59 PM -> Day, else Night
@@ -163,7 +157,7 @@ function forecastDia(response) {
 
         // Convertir el tiempo a formato AM/PM (e.j., 3 PM)
         const date = new Date(time);
-        const hours = date.getHours();
+        const hours = date.getUTCHours();
         console.log(hours)
         const formattedTime = `${hours % 12 || 12} ${hours >= 12 ? "PM" : "AM"}`;
 
@@ -202,16 +196,34 @@ function forecastDia(response) {
 
 // Función para obtener la información de la api (Tomorrow.io)
 async function fetchClimaData() {
+  /* 
+    - Esta parte de la función es para leer los datos desde el caché.
+    - Solo se hace una solicitud a la api si la última fue hace más de 1 hora. 
+    - La disponibilidad de actualizar el caché (hacer una llamada a la api) se renueva cada hora.
+    - La información se almacena en el caché del usuario. 25 usuarios por hora pueden ver el clima. 
+  */
+
   const cacheKey = "weatherData";
-  const cacheExpiration = 60 * 60 * 1000; // 1 hora en milisegundos
   const cachedData = JSON.parse(localStorage.getItem(cacheKey));
 
-  // Verificar si hay datos en caché y si aún son válidos
-  if (cachedData && (Date.now() - cachedData.timestamp < cacheExpiration)) {
+  // Obtener la hora actual en UTC redondeada a la última hora exacta
+  const now = new Date();
+  now.setUTCMinutes(0, 0, 0); // Redondear a la hora exacta (ej. 4:00 PM UTC)
+
+  const lastUpdate = cachedData ? new Date(cachedData.timestamp) : null;
+
+  // Verificar si hay datos en caché y si aún son de la hora actual exacta
+  if (cachedData && lastUpdate && lastUpdate.getTime() >= now.getTime()) {
       forecastDia(cachedData.data);
       climaAhora(cachedData.data);
       return;
   }
+
+  /* 
+    Esta parte de la función es para obtener los datos directamente
+    desde la api, en caso de que el caché del usuario esté vacío
+    o deba de ser renovado por el paso de 1 hora.
+  */
 
   const options = {
       method: 'POST',
@@ -225,7 +237,7 @@ async function fetchClimaData() {
         fields: ['temperature', 'weatherCode', 'humidity', 'precipitationProbability'],
         units: 'metric',
         timesteps: ['1h'],
-        startTime: 'now',
+        startTime: 'nowMinus4h',
         endTime: 'nowPlus6h',
         dailyStartHour: 6
       })
@@ -248,8 +260,8 @@ async function fetchClimaData() {
           }))
       };
 
-      // Guardar en localStorage con la marca de tiempo actual
-      localStorage.setItem(cacheKey, JSON.stringify({ data: formattedResponse, timestamp: Date.now() }));
+      // Guardar en localStorage con la hora exacta redondeada
+      localStorage.setItem(cacheKey, JSON.stringify({ data: formattedResponse, timestamp: now.getTime() }));
 
       // Actualizar la interfaz con los nuevos datos
       forecastDia(formattedResponse);
@@ -262,8 +274,6 @@ async function fetchClimaData() {
 // Ejecutar la función
 fetchClimaData();
 
-
-  
 // Pronóstico de los próximos 6 días (Widget de Tomorrow.io)
 (function (d, s, id) {
   if (d.getElementById(id)) {

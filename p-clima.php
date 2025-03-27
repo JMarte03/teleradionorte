@@ -20,6 +20,7 @@ get_header();
     $year = $date->format("Y");
 ?>
 
+<body>
 <main class="bg-white px-12">
     <!-- Clima de hoy -->
     <section class="mt-6 w-full space-y-5">
@@ -104,5 +105,6 @@ get_header();
         </div>
     </section>        
 </main>
+<script src="<?php echo get_theme_file_uri('/resources/js/clima.js'); ?>"></script>
 
 <?php get_footer(); ?>

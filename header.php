@@ -45,7 +45,7 @@
 									<button class="hover:px-8 text-lg rounded-full transition-duration-150 hover:bg-brandGreen hover:text-white group relative w-full text-left pl-3 font-hanken font-light text-black transition-all transition-duration-150"> 
 										Más
 										<div class="w-full absolute top-full right-0 p-2 bg-lightestGreen shadow-xm text-black font-hanken font-light rounded-b-lg scale-y-0 group-hover:scale-y-100 origin-top duration-200 z-50">
-											<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a>
+											<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white weather-btn" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a>
 											<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('combustible'))); ?>">Combustible</a>
 											<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('loteria'))); ?>">Lotería</a>
 											<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('dolar'))); ?>">Dólar</a>
@@ -110,7 +110,7 @@
 					<button class="group relative w-1/5 bg-lightGreen rounded-full text-center p-2 font-hanken font-light text-black transition-all transition-duration-150 hover:bg-brandGreen hover:text-white z-1"> 
 						Más
 						<div class="w-full absolute top-full right-0 p-2 bg-lightestGreen shadow-xm text-black font-hanken font-light rounded-b-lg scale-y-0 group-hover:scale-y-100 origin-top duration-200 z-50">
-							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a>
+							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen active:bg-brandGreen active:text-white weather-btn" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a>
 							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('combustible'))); ?>">Combustible</a>
 							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('loteria'))); ?>">Lotería</a>
 							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('dolar'))); ?>">Dólar</a>

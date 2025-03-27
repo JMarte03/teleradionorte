@@ -23,7 +23,6 @@
 	</footer>
 	<script src="<?php echo get_theme_file_uri('/resources/js/plyr.js'); ?>"></script>
 	<script src="<?php echo get_theme_file_uri('/resources/js/programa-hoy.js'); ?>"></script>
-	<script src="<?php echo get_theme_file_uri('/resources/js/clima.js'); ?>"></script>
 	<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
