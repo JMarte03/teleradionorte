@@ -3,7 +3,7 @@
 <!-- Obteniendo las 5 últimas noticias de la página -->
 <?php
 	$latest_posts = new WP_Query([
-		'post_type'      => 'post', // Solmente posts
+		'post_type'      => 'post', // Solamente posts
 		'posts_per_page' => 5,      // 5 posts
 	]);
 

@@ -5,9 +5,18 @@
 get_header();
 ?>
 
-<div class="bg-white px-12">
-    <h1 class="text-4xl font-bold text-green-600">Noticias</h1>
-    <p class="text-black font-hanken">Esta es la página de noticias</p>
-</div>
+
+
+<main class="bg-white">
+    <!-- NOTICIAS RECIENTES -->
+    <section class="px-12 w-full mx-auto max-w-7xl mt-7">
+        <?php include 'components/recent-posts.php'; ?>
+    </section>
+
+    <!-- POLITICA -->
+    <section class="p-12 bg-darkGreen w-full mx-auto max-w-7xl mt-20">
+        <?php include 'components/politics-posts.php'; ?>
+    </section>
+</main>
 
 <?php get_footer(); ?>
