@@ -17,6 +17,32 @@ get_header();
     <section class="p-12 bg-darkGreen w-full mx-auto max-w-7xl mt-20">
         <?php include 'components/politics-posts.php'; ?>
     </section>
+
+    <!-- DEPORTES Y ECONOMIA -->
+    <section class="flex flex-col gap-15 p-12 w-full mx-auto max-w-7xl mt-7 lg:flex-row">
+        <?php include 'components/sports-posts.php'; ?>
+        <?php include 'components/economy-posts.php'; ?>
+    </section>
+
+    <!-- EDUCACIÓN -->
+    <section class="p-12 bg-grayBg w-full mx-auto max-w-7xl mt-7">
+        <?php include 'components/education-posts.php'; ?>
+    </section>
+
+    <!-- INTERCAMBIOS -->
+    <section class="p-12 w-full mx-auto max-w-7xl mt-7">
+        <?php include 'components/networking-posts.php'; ?>
+    </section>
+
+    <!-- TECNOLOGÍA -->
+    <section class="p-12 bg-brandTurquoise w-full mx-auto max-w-7xl mt-7">
+        <?php include 'components/tech-posts.php'; ?>
+    </section>
+
+     <!-- MÁS TEMAS -->
+     <section class="p-12 w-full mx-auto max-w-7xl mt-7">
+        <?php include 'components/more-posts.php'; ?>
+    </section>
 </main>
 
 <?php get_footer(); ?>

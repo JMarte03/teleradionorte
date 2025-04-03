@@ -1,15 +1,15 @@
 <?php
-	$latest_politics_posts = new WP_Query([
+	$latest_tech_posts = new WP_Query([
 		'post_type'      => 'post', // Only posts
 		'posts_per_page' => 4,      // 9 posts
-		'category_name'  => 'politica', // Only 'Política' category
+		'category_name'  => 'tecnologia', // Only 'Política' category
 	]);
 
 	$posts_array = [];
 
-	if ($latest_politics_posts->have_posts()) {
-		while ($latest_politics_posts->have_posts()) {
-			$latest_politics_posts->the_post();
+	if ($latest_tech_posts->have_posts()) {
+		while ($latest_tech_posts->have_posts()) {
+			$latest_tech_posts->the_post();
 			
 			// Storing each post's data in an array
 			$posts_array[] = [
@@ -31,13 +31,13 @@
     <div class="w-full">
         <a href="#" class="space-y-5">
 			<div class="flex items-center justify-between text-2xl font-anton text-white hover:text-white/80 transition-all transition-duration-150 md:text-3xl">
-				<h2>Política</h2>
+				<h2>Tecnología</h2>
 				<i class='bx bx-link-external bx-sm text-white transition-all transition-duration-150 hover:text-white/80'></i>
 			</div>
 			<div class="w-full border-b border-white my-2 hover:border-white/80 transition-all transition-duration-150"></div>
 		</a>
 	</div>
-	<div class="w-full flex flex-col gap-y-3 gap-x-15 transition-all transition-duration-150 lg:flex-row">
+	<div class="w-full flex flex-col gap-y-3 gap-x-15 transition-all transition-duration-150 lg:flex-row-reverse">
 		<div class="basis-1/2">
             <?php foreach ($posts_array as $index => $post) : ?>
                 <?php if ( $index == 0 ) : ?>

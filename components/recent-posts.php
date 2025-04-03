@@ -38,7 +38,7 @@
 		<?php foreach ($posts_array as $index => $post) : ?>
 			<?php if ( $index == 0 ) : ?>
 				<a href="<?php echo esc_url($post['link']); ?>" class="basis-1/2">
-					<div class="bg-cover bg-center basis-4/6" style="background-image: url('<?php echo esc_url($post['imagen']); ?>');">
+					<div class="bg-cover bg-center basis-4/6 hover:scale-95 transition-all transition-duration-150" style="background-image: url('<?php echo esc_url($post['imagen']); ?>');">
 						<div class="flex flex-col justify-end bg-black/50 p-5 h-80 gap-y-5">
 							<span class="uppercase w-fit font-hanken text-sm text-white pt-2 border-t border-white"><?php echo esc_html($post['categoria']);?></span>
 							<h3 class="w-[80%] font-anton text-white text-2xl hover:underline"><?php echo esc_html($post['titulo']); ?></h3>
