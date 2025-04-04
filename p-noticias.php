@@ -14,7 +14,7 @@ get_header();
     </section>
 
     <!-- POLITICA -->
-    <section class="p-12 bg-darkGreen w-full mx-auto max-w-7xl mt-20">
+    <section class="p-12 bg-darkGreen/70 w-full mx-auto max-w-7xl mt-20">
         <?php include 'components/politics-posts.php'; ?>
     </section>
 
@@ -25,7 +25,7 @@ get_header();
     </section>
 
     <!-- EDUCACIÓN -->
-    <section class="p-12 bg-grayBg w-full mx-auto max-w-7xl mt-7">
+    <section class="p-12 bg-grayBg/80 w-full mx-auto max-w-7xl mt-7">
         <?php include 'components/education-posts.php'; ?>
     </section>
 
@@ -35,7 +35,7 @@ get_header();
     </section>
 
     <!-- TECNOLOGÍA -->
-    <section class="p-12 bg-brandTurquoise w-full mx-auto max-w-7xl mt-7">
+    <section class="p-12 bg-brandTurquoise/70 w-full mx-auto max-w-7xl mt-7">
         <?php include 'components/tech-posts.php'; ?>
     </section>
 

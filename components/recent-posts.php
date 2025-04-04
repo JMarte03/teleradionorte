@@ -6,6 +6,7 @@
 	]);
 
 	$posts_array = [];
+	$default_image = get_template_directory_uri() . '/resources/img/trn-placeholder.png';
 
 	if ($latest_posts->have_posts()) {
 		while ($latest_posts->have_posts()) {
@@ -16,7 +17,7 @@
 				'titulo'   => wp_trim_words(get_the_title(), 10, '...'),
 				'categoria' => !empty(get_the_category()) ? get_the_category()[0]->name : 'Sin categoría',
 				'link'    => get_permalink(),
-				'imagen'   => get_the_post_thumbnail_url(get_the_ID(), 'medium'),
+				'imagen'   => get_the_post_thumbnail_url(get_the_ID(), 'medium') ?: $default_image,
 				'fecha'    => get_the_date(),
 				'autor' => get_the_author(),
 			];
