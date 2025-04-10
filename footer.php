@@ -26,6 +26,7 @@
 	<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script type="module" src="https://unpkg.com/cally"></script>
 	<script src="<?php echo get_theme_file_uri('/resources/js/contacto.js'); ?>"></script>
 </body>
 </html>
