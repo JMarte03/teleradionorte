@@ -25,6 +25,16 @@
   --color-grayTitle: #6d6e71;
   --color-grayBg: #595959;
   --color-brandTurquoise: #026779;
+  --color-nacional: #53ca5e;
+  --color-leidsa: #c9b203;
+  --color-real: #192882;
+  --color-loteka: #02b1dc;
+  --color-americana: #3c3b6e;
+  --color-primera: #e73943;
+  --color-laSuerte: #2d2d83;
+  --color-loteDom: #0009cd;
+  --color-kingLottery: #00569c;
+  --color-anguila: #ed662c;
   /* fonts */
   --font-hanken: "Hanken Grotesk", "sans-serif"; 
   --font-anton: "Anton", "sans-serif"; 
