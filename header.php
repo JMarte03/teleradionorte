@@ -73,18 +73,11 @@
 					</li>
 				</ul>
 				<!-- search -->
-				<form class="hidden font-hanken md:flex">
-					<label class="input join-item border border-lightGreen rounded-none rounded-l-full bg-white">
-						<input type="search" class="text-gray-500" required placeholder="Buscar"/>
+				<form class="hidden md:flex">
+					<label class="input">
+						<svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+						<input type="search" class="grow border-stone-50 rounded-xl focus:outline-hidden" placeholder="Buscar" />
 					</label>
-					<button type="submit" class="btn bg-lightGreen rounded-none rounded-r-full border-0 shadow-none text-black join-item">
-						<svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-							<g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
-								<circle cx="11" cy="11" r="8"></circle>
-								<path d="m21 21-4.3-4.3"></path>
-							</g>
-						</svg>
-					</button>
 				</form>
 			</section>
 			<!-- divider -->
@@ -118,8 +111,6 @@
 					</button>
 				</ul>
 			</section>
-			<!-- divider -->
-			<div class="hidden w-full border-b border-b-lightGreen mt-8 lg:block"></div>
 		</nav>
 	</header>
 
