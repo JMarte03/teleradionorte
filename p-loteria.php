@@ -167,7 +167,7 @@ get_header();
             </div>
         </section>
         <!-- Resultados -->
-        <section id="results-container" class="flex flex-col gap-y-12 lg:basis-[60%] lg:h-full lg:overflow-y-scroll">
+        <section id="results-container" class="flex flex-col gap-y-12 lg:flex-grow lg:h-full lg:overflow-y-scroll">
             
         </section>
     </div>

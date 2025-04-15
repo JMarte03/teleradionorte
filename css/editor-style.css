@@ -618,9 +618,6 @@
   .my-16 {
     margin-block: calc(var(--spacing) * 16);
   }
-  .mt-0 {
-    margin-top: calc(var(--spacing) * 0);
-  }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
@@ -709,26 +706,8 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
-  .h-20 {
-    height: calc(var(--spacing) * 20);
-  }
   .h-24 {
     height: calc(var(--spacing) * 24);
-  }
-  .h-40 {
-    height: calc(var(--spacing) * 40);
-  }
-  .h-70 {
-    height: calc(var(--spacing) * 70);
-  }
-  .h-74 {
-    height: calc(var(--spacing) * 74);
-  }
-  .h-75 {
-    height: calc(var(--spacing) * 75);
-  }
-  .h-76 {
-    height: calc(var(--spacing) * 76);
   }
   .h-80 {
     height: calc(var(--spacing) * 80);
@@ -748,18 +727,8 @@
   .h-auto {
     height: auto;
   }
-  .h-fit {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
   .max-h-82 {
     max-height: calc(var(--spacing) * 82);
-  }
-  .max-h-96 {
-    max-height: calc(var(--spacing) * 96);
-  }
-  .min-h-96 {
-    min-height: calc(var(--spacing) * 96);
   }
   .min-h-full {
     min-height: 100%;
@@ -886,9 +855,6 @@
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
-  }
-  .gap-12 {
-    gap: calc(var(--spacing) * 12);
   }
   .gap-15 {
     gap: calc(var(--spacing) * 15);
@@ -1047,9 +1013,6 @@
   .overflow-x-scroll {
     overflow-x: scroll;
   }
-  .overflow-y-auto {
-    overflow-y: auto;
-  }
   .overflow-y-scroll {
     overflow-y: scroll;
   }
@@ -1062,9 +1025,6 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .rounded-none {
-    border-radius: 0;
-  }
   .rounded-sm {
     border-radius: var(--radius-sm);
   }
@@ -1074,17 +1034,9 @@
   .rounded-xs {
     border-radius: var(--radius-xs);
   }
-  .rounded-l-full {
-    border-top-left-radius: calc(infinity * 1px);
-    border-bottom-left-radius: calc(infinity * 1px);
-  }
   .rounded-t-xl {
     border-top-left-radius: var(--radius-xl);
     border-top-right-radius: var(--radius-xl);
-  }
-  .rounded-r-full {
-    border-top-right-radius: calc(infinity * 1px);
-    border-bottom-right-radius: calc(infinity * 1px);
   }
   .rounded-b-lg {
     border-bottom-right-radius: var(--radius-lg);
@@ -1105,12 +1057,6 @@
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
-  }
-  .border-gray-50 {
-    border-color: var(--color-gray-50);
-  }
-  .border-gray-100 {
-    border-color: var(--color-gray-100);
   }
   .border-gray-200 {
     border-color: var(--color-gray-200);
@@ -1153,9 +1099,6 @@
   }
   .bg-stone-100\/50 {
     background-color: color-mix(in oklab, var(--color-stone-100) 50%, transparent);
-  }
-  .bg-stone-200\/50 {
-    background-color: color-mix(in oklab, var(--color-stone-200) 50%, transparent);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -1238,9 +1181,6 @@
   }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
-  }
-  .pt-6 {
-    padding-top: calc(var(--spacing) * 6);
   }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
@@ -1338,9 +1278,6 @@
   }
   .text-green-600 {
     color: var(--color-green-600);
-  }
-  .text-stone-100 {
-    color: var(--color-stone-100);
   }
   .text-stone-200 {
     color: var(--color-stone-200);
@@ -1504,12 +1441,6 @@
       }
     }
   }
-  .focus\:outline-0 {
-    &:focus {
-      outline-style: var(--tw-outline-style);
-      outline-width: 0px;
-    }
-  }
   .focus\:outline-none {
     &:focus {
       --tw-outline-style: none;
@@ -1624,11 +1555,6 @@
       margin-top: calc(var(--spacing) * 0);
     }
   }
-  .lg\:mt-8 {
-    @media (width >= 992px) {
-      margin-top: calc(var(--spacing) * 8);
-    }
-  }
   .lg\:mt-12 {
     @media (width >= 992px) {
       margin-top: calc(var(--spacing) * 12);
@@ -1708,6 +1634,11 @@
   .lg\:w-full {
     @media (width >= 992px) {
       width: 100%;
+    }
+  }
+  .lg\:flex-grow {
+    @media (width >= 992px) {
+      flex-grow: 1;
     }
   }
   .lg\:basis-1\/2 {
@@ -1988,10 +1919,5 @@
 @property --tw-duration {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 
