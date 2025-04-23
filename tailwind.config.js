@@ -12,13 +12,16 @@ module.exports = {
       fontFamily: {
         hanken: ['Hanken Grotesk', 'sans-serif'],
         anton: ['Anton', 'sans-serif'],
-        antonio: ['Antonio', 'sans-serif']
+        antonio: ['Antonio', 'sans-serif'],
+        gothicExpanded: ['Special Gothic Expanded One', 'sans-serif'],
+        encodeSans: ['Encode Sans Expanded', 'sans-serif'] 
       },
       colors: {
         lightGreen: "#e7efe6",
         lightestGreen: "#fafdfa",
         brandGreen: "#4e844d",
         darkGreen: "#0c440a",
+        softGreen: "#4e734b",
         grayTitle: "#6d6e71",
         grayBg: "#595959",
         brandTurquoise: "#026779"

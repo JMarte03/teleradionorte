@@ -597,6 +597,12 @@
   .m-8 {
     margin: calc(var(--spacing) * 8);
   }
+  .mx-1 {
+    margin-inline: calc(var(--spacing) * 1);
+  }
+  .mx-3 {
+    margin-inline: calc(var(--spacing) * 3);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -751,6 +757,9 @@
   .w-12 {
     width: calc(var(--spacing) * 12);
   }
+  .w-14 {
+    width: calc(var(--spacing) * 14);
+  }
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
@@ -874,6 +883,10 @@
   .gap-x-5 {
     -moz-column-gap: calc(var(--spacing) * 5);
          column-gap: calc(var(--spacing) * 5);
+  }
+  .gap-x-6 {
+    -moz-column-gap: calc(var(--spacing) * 6);
+         column-gap: calc(var(--spacing) * 6);
   }
   .gap-x-8 {
     -moz-column-gap: calc(var(--spacing) * 8);
@@ -1037,6 +1050,18 @@
   .rounded-t-xl {
     border-top-left-radius: var(--radius-xl);
     border-top-right-radius: var(--radius-xl);
+  }
+  .rounded-b-2xl {
+    border-bottom-right-radius: var(--radius-2xl);
+    border-bottom-left-radius: var(--radius-2xl);
+  }
+  .rounded-b-3xl {
+    border-bottom-right-radius: var(--radius-3xl);
+    border-bottom-left-radius: var(--radius-3xl);
+  }
+  .rounded-b-4xl {
+    border-bottom-right-radius: var(--radius-4xl);
+    border-bottom-left-radius: var(--radius-4xl);
   }
   .rounded-b-lg {
     border-bottom-right-radius: var(--radius-lg);
@@ -1649,11 +1674,6 @@
   .lg\:basis-\[20\%\] {
     @media (width >= 992px) {
       flex-basis: 20%;
-    }
-  }
-  .lg\:basis-\[60\%\] {
-    @media (width >= 992px) {
-      flex-basis: 60%;
     }
   }
   .lg\:flex-col {

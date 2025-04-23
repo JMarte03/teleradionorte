@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Special+Gothic+Expanded+One&display=swap);
 /*! tailwindcss v4.0.6 | MIT License | https://tailwindcss.com */
 @layer theme, base, components, utilities;
 @layer theme {
@@ -383,6 +383,7 @@
     --color-lightestGreen: #fafdfa;
     --color-brandGreen: #4e844d;
     --color-darkGreen: #0c440a;
+    --color-softGreen: #4e734b;
     --color-grayTitle: #6d6e71;
     --color-grayBg: #595959;
     --color-brandTurquoise: #026779;
@@ -396,6 +397,9 @@
     --color-loteDom: #0009cd;
     --color-kingLottery: #00569c;
     --color-anguila: #ed662c;
+    --font-gothicExpanded: "Special Gothic Expanded One", "sans-serif";
+    --font-encodeSans: "Encode Sans Expanded", "sans-serif";
+    --font-antonio: "Antonio", "sans-serif";
   }
 }
 @layer base {
@@ -1479,6 +1483,12 @@
   .m-8 {
     margin: calc(var(--spacing) * 8);
   }
+  .mx-1 {
+    margin-inline: calc(var(--spacing) * 1);
+  }
+  .mx-3 {
+    margin-inline: calc(var(--spacing) * 3);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -1877,6 +1887,9 @@
   .w-12 {
     width: calc(var(--spacing) * 12);
   }
+  .w-14 {
+    width: calc(var(--spacing) * 14);
+  }
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
@@ -2019,6 +2032,10 @@
   .gap-x-5 {
     -moz-column-gap: calc(var(--spacing) * 5);
          column-gap: calc(var(--spacing) * 5);
+  }
+  .gap-x-6 {
+    -moz-column-gap: calc(var(--spacing) * 6);
+         column-gap: calc(var(--spacing) * 6);
   }
   .gap-x-8 {
     -moz-column-gap: calc(var(--spacing) * 8);
@@ -2189,6 +2206,18 @@
     border-top-left-radius: var(--radius-xl);
     border-top-right-radius: var(--radius-xl);
   }
+  .rounded-b-2xl {
+    border-bottom-right-radius: var(--radius-2xl);
+    border-bottom-left-radius: var(--radius-2xl);
+  }
+  .rounded-b-3xl {
+    border-bottom-right-radius: var(--radius-3xl);
+    border-bottom-left-radius: var(--radius-3xl);
+  }
+  .rounded-b-4xl {
+    border-bottom-right-radius: var(--radius-4xl);
+    border-bottom-left-radius: var(--radius-4xl);
+  }
   .rounded-b-lg {
     border-bottom-right-radius: var(--radius-lg);
     border-bottom-left-radius: var(--radius-lg);
@@ -2310,6 +2339,9 @@
   }
   .bg-real {
     background-color: var(--color-real);
+  }
+  .bg-softGreen {
+    background-color: var(--color-softGreen);
   }
   .bg-stone-50 {
     background-color: var(--color-stone-50);
@@ -2449,6 +2481,15 @@
   }
   .align-middle {
     vertical-align: middle;
+  }
+  .font-antonio {
+    font-family: var(--font-antonio);
+  }
+  .font-encodeSans {
+    font-family: var(--font-encodeSans);
+  }
+  .font-gothicExpanded {
+    font-family: var(--font-gothicExpanded);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -2976,11 +3017,6 @@
   .lg\:basis-\[20\%\] {
     @media (width >= 992px) {
       flex-basis: 20%;
-    }
-  }
-  .lg\:basis-\[60\%\] {
-    @media (width >= 992px) {
-      flex-basis: 60%;
     }
   }
   .lg\:flex-col {

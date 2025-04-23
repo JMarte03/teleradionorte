@@ -30,7 +30,7 @@
 	wp_reset_postdata();
 ?>
 
-<main class="pb-8 mt-4 px-12 bg-white lg:mt-12">
+<main class="pb-8 mt-4 px-12 lg:mt-12">
 	<!-- Sección programa -->
 	<section class="w-full flex flex-col gap-x-12 gap-y-8 lg:flex-row">
 		<div class="ctn bg-white z-10">
