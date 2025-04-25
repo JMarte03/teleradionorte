@@ -29,5 +29,10 @@
 	<script type="module" src="https://unpkg.com/cally"></script>
 	<script src="<?php echo get_theme_file_uri('/resources/js/contacto.js'); ?>"></script>
 	<script src="<?php echo get_theme_file_uri('/resources/js/loteria.js'); ?>"></script>
+	<!-- AOS LIBRARY -->
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>

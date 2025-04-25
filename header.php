@@ -11,6 +11,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<?php wp_head(); ?>
 </head>
 <body class="antialiased bg-lightGreen">
@@ -52,7 +53,7 @@
 			</div>
 		</div>
 		<!-- Logo -->
-		<div>
+		<div class="hidden lg:block">
 			<a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-x-4">
 				<img src="<?php echo get_theme_file_uri('/resources/img/logo.png'); ?>" alt="Logo de Teleradio Norte" class="w-14 h-auto">
 				<p class="font-encodeSans text-sm text-white">Teleradionorte</p>
@@ -67,9 +68,9 @@
 				<li class="hover:underline"><a href="#noticias" class="">Noticias</a></li>
 				<li class="hover:underline"><a href="#contacto" class="">Contacto</a></li>
 				<li>
-					<button class=""> 
+					<button class="bg-brandGreen rounded-xl group relative w-[150px] p-2 transition-all transition-duration-150 z-1"> 
 						Más
-						<div class="w-full absolute top-full right-0 p-2 bg-lightestGreen shadow-xm text-black font-hanken font-light rounded-b-lg scale-y-0 group-hover:scale-y-100 origin-top duration-200 z-50">
+						<div class="w-full absolute top-full right-0 p-2 bg-lightestGreen/80 shadow-xm text-black font-hanken font-light rounded-b-lg scale-y-0 group-hover:scale-y-100 origin-top duration-200 z-50">
 							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white weather-btn" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a>
 							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('combustible'))); ?>">Combustible</a>
 							<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('loteria'))); ?>">Lotería</a>
