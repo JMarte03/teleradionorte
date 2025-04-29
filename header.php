@@ -14,8 +14,8 @@
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<?php wp_head(); ?>
 </head>
-<body class="antialiased bg-lightGreen">
-	<header class="flex justify-between items-center mx-3 py-6 px-12 bg-softGreen rounded-b-2xl">
+<body class="antialiased bg-white">
+	<header class="sticky top-0 z-[999] shadow-md flex justify-between items-center mx-3 py-6 px-12 bg-softGreen rounded-b-2xl">
 		<!-- Navegación móvil -->
 		<div class="drawer lg:hidden">
 			<!-- Navigation Toggle -->
@@ -27,27 +27,35 @@
 				<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
 				<ul class="menu bg-white text-black min-h-full w-72 p-8 space-y-2">
 					<!-- Sidebar content here -->
-					<a href="<?php echo esc_url(home_url('/')); ?>">
-						<img src="<?php echo get_theme_file_uri('/resources/img/logo.png'); ?>" alt="Logo de Teleradio Norte" class="ml-2 w-28 h-auto">
+					<a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-x-6 mb-10 pl-3">
+						<img src="<?php echo get_theme_file_uri('/resources/img/logo.png'); ?>" alt="Logo de Teleradio Norte" class="w-10 h-auto">
+						<span class="font-encodeSans text-black text-sm">Teleradionorte</span>
 					</a>
-					<div class="w-full border-b border-b-lightGreen my-8"></div>
-					<li><a href="<?php echo esc_url(home_url('/')); ?>" class="hover:px-8 font-hanken font-light text-black text-lg rounded-full transition-all transition-duration-150 hover:bg-brandGreen hover:text-white">Inicio</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(get_page_by_path('sobre-nosotros'))); ?>" class="hover:px-8 font-hanken font-light text-black text-lg rounded-full transition-all transition-duration-150 hover:bg-brandGreen hover:text-white">Sobre Nosotros</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(get_page_by_path('servicios'))); ?>" class="hover:px-8 font-hanken font-light text-black text-lg rounded-full transition-all transition-duration-150 hover:bg-brandGreen hover:text-white">Servicios</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(get_page_by_path('contacto'))); ?>" class="hover:px-8 font-hanken font-light text-black text-lg rounded-full transition-all transition-duration-150 hover:bg-brandGreen hover:text-white">Contacto</a></li>
-					<div class="w-full border-b border-b-lightGreen my-8"></div>
-					<li><a href="<?php echo esc_url(get_permalink(get_page_by_path('noticias'))); ?>" class="hover:px-8 font-hanken font-light text-black text-lg rounded-full transition-all transition-duration-150 hover:bg-brandGreen hover:text-white">Noticias</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(get_page_by_path('programa'))); ?>" class="hover:px-8 font-hanken font-light text-black text-lg rounded-full transition-all transition-duration-150 hover:bg-brandGreen hover:text-white">Programa</a></li>
-					<li>
-						<button class="hover:px-8 text-lg rounded-full transition-duration-150 hover:bg-brandGreen hover:text-white group relative w-full text-left pl-3 font-hanken font-light text-black transition-all transition-duration-150"> 
+					<!-- <div class="w-full border-b border-b-lightGreen my-8"></div> -->
+					<li><a href="<?php echo esc_url(home_url('/')); ?>" class="font-encodeSans font-light text-black text-md">Inicio</a></li>
+					<li><a href="#sobre-nosotros" class="font-encodeSans font-light text-black text-md -pl-3">Sobre Nosotros</a></li>
+					<li><a href="#programacion" class="font-encodeSans font-light text-black text-md -pl-3">Programación</a></li>
+					<li><a href="#noticias" class="font-encodeSans font-light text-black text-md -pl-3">Noticias</a></li>
+					<li><a href="#contacto" class="font-encodeSans font-light text-black text-md -pl-3">Contacto</a></li>
+					<li class="font-encodeSans font-light text-black text-md">
+						<details>
+							<summary>Más</summary>
+							<ul>
+								<li><a class="p-2 rounded-lg active:bg-lightGreen weather-btn" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a></li>
+								<li><a class="p-2 rounded-lg active:bg-lightGreen" href="<?php echo esc_url(get_permalink(get_page_by_path('combustible'))); ?>">Combustible</a></li>
+								<li><a class="p-2 rounded-lg active:bg-lightGreen" href="<?php echo esc_url(get_permalink(get_page_by_path('loteria'))); ?>">Lotería</a></li>
+								<li><a class="p-2 rounded-lg active:bg-lightGreen" href="<?php echo esc_url(get_permalink(get_page_by_path('dolar'))); ?>">Dólar</a></li>
+							</ul>
+						</details>
+						<!-- <button class="hover:px-8 text-md rounded-full transition-duration-150 hover:bg-brandGreen hover:text-white group relative w-full text-left pl-3 font-encodeSans font-light text-black transition-all transition-duration-150"> 
 							Más
 							<div class="w-full absolute top-full right-0 p-2 bg-lightestGreen shadow-xm text-black font-hanken font-light rounded-b-lg scale-y-0 group-hover:scale-y-100 origin-top duration-200 z-50">
-								<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white weather-btn" href="<?php echo esc_url(get_permalink(get_page_by_path('clima'))); ?>">Clima</a>
-								<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('combustible'))); ?>">Combustible</a>
-								<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('loteria'))); ?>">Lotería</a>
-								<a class="block p-2 rounded-lg transition-all transition-duration-300 hover:bg-lightGreen hover:px-8 active:bg-brandGreen active:text-white" href="<?php echo esc_url(get_permalink(get_page_by_path('dolar'))); ?>">Dólar</a>
+								
+								
+								
+								
 							</div>
-						</button>
+						</button> -->
 					</li>
 				</ul>
 			</div>

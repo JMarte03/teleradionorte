@@ -69,16 +69,16 @@ async function getData() {
                 gameInfo.className = "game-info flex flex-col gap-y-5";
 
                 const dateSpan = document.createElement("span");
-                dateSpan.className = "game-date w-fit p-2 rounded-xl bg-gray-200 text-xs text-black";
+                dateSpan.className = "game-date w-fit p-2 rounded-xl bg-gray-200 text-xs font-encodeSans text-black";
                 dateSpan.textContent = game.date;
 
                 const nameSpan = document.createElement("span");
-                nameSpan.className = "game-name text-lg";
+                nameSpan.className = "game-name font-encodeSans text-md";
                 nameSpan.textContent = game.game;
 
                 // Result numbers
                 const resultsUl = document.createElement("ul");
-                resultsUl.className = "game-results flex flex-wrap gap-x-2 gap-y-2";
+                resultsUl.className = "game-results font-encodeSans text-md flex flex-wrap gap-x-2 gap-y-2";
 
                 game.number.forEach(num => {
                     const li = document.createElement("li");

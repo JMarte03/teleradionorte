@@ -4,7 +4,7 @@
 <?php
 	$latest_posts = new WP_Query([
 		'post_type'      => 'post', // Solamente posts
-		'posts_per_page' => 5,      // 5 posts
+		'posts_per_page' => 4,      // 4 posts
 	]);
 
 	$posts_array = [];
@@ -17,6 +17,7 @@
 			// Almacenando los datos de cada noticia (post) en un array
 			$posts_array[] = [
 				'titulo'   => wp_trim_words(get_the_title(), 10, '...'),
+				'desc'   => wp_trim_words(get_the_content(), 10, '...'),
 				'categoria' => !empty(get_the_category()) ? get_the_category()[0]->name : 'Sin categoría',
 				'link'    => get_permalink(),
 				'imagen'   => get_the_post_thumbnail_url(get_the_ID(), 'medium') ?: $default_image,
@@ -32,7 +33,7 @@
 
 <main class="w-full">
 	<!-- Hero section -->
-	<section class="p-3">
+	<section class="p-3 bg-lightGreen">
 		<div class="min-h-screen w-full flex items-stretch bg-cover bg-center rounded-2xl" style="background-image: url('<?php echo get_theme_file_uri('/resources/img/hero2-bg.gif'); ?>');">
 			<div class="flex items-center">
 				<div class="px-12 space-y-15 md:w-[600px] lg:w-[700px]">
@@ -87,133 +88,207 @@
 	</section>
 
 	<!-- Sección programa -->
-	<section id="programacion" class="w-full p-12 bg-white flex flex-col gap-x-12 gap-y-8 lg:flex-row">
-		<div class="space-y-4 lg:min-h-96 lg:max-h-96">
-			<div class="ctn">
-				<video id="player" controls crossorigin playsinline class="lg:max-h-80">
-					<source src="https://angelistic.live:3785/hybrid/play.m3u8" type="application/vnd.apple.mpegurl">
-					<a>Video Oynatılamıyor</a>
-				</video>
-			</div>
-			<div class="bg-lightestGreen flex items-center gap-3 p-3 font-encodeSans text-softGreen text-xl font-semibold">
-				<i class="bx bxs-square"></i>
-				<span id="ahora" class="">En Vivo: <span class="text-black font-normal">Amaneciendo con TRN</span></span>
-			</div>
-		</div>
-		<div class="flex-grow lg:h-96">
-			<!-- title -->
-			<a href="<?php echo esc_url(get_permalink(get_page_by_path('programa')));?>" class="flex items-center justify-between font-semibold text-2xl text-brandGreen hover:text-darkGreen/80 transition-all transition-duration-150">
-				<h2>Programación de Hoy</h2>
-			</a>
-			<!-- descripción -->
-			<div id="programa-hoy" class="lg:overflow-y-scroll lg:max-h-80 mt-8 w-full">
-				<ul class="space-y-2">
-					<li class="flex items-center p-3 rounded-sm gap-x-3">
-						<i class='bx bx-sm'></i>
-						<p class="font-light"><span id="time">7:00 AM - 9:00 AM</span>: Amaneciendo TRN</p>
-					</li>
-					<li class="flex items-center p-3 rounded-sm gap-x-3">
-						<i class='bx bx-sm'></i>
-						<p class=" font-light"><span id="time">9:00 AM - 12:00 PM</span>: Documental</p>
-					</li>
-					<li class="flex items-center p-3 rounded-sm gap-x-3">
-						<i class='bx bx-sm'></i>
-						<p class=" font-light"><span id="time">12:00 PM - 1:00 PM</span>: La Belleza Es Mía</p>
-					</li>
-					<li class="flex items-center p-3 rounded-sm gap-x-3">
-						<i class='bx bx-sm'></i>
-						<p class=" font-light"><span id="time">1:00 PM - 3:00 PM</span>: Documental</p>
-					</li>
-					<li class="flex items-center p-3 rounded-sm gap-x-">
-						<i class='bx bx-sm'></i>
-						<p class=" font-light"><span id="time">3:00 PM - 4:00 PM</span>: Tiempo de Amparo</p>
-					</li>
-					<li class="flex items-center p-3 rounded-sm gap-x-">
-						<i class='bx bx-sm'></i>
-						<p class=" font-light"><span id="time">4:00 PM - 6:00 PM</span>: Documental</p>
-					</li>
-					<li class="flex items-center p-3 rounded-sm gap-x-3">
-						<i class='bx bx-sm'></i>
-						<p class=" font-light"><span id="time">6:00 PM - 8:00 PM</span>: Comentando La Actualidad</p>
-					</li>
-					<li class="flex items-center p-3 rounded-sm gap-x-3">
-						<i class='bx bx-sm'></i>
-						<p class=" font-light"><span id="time">8:00 PM</span>: Repetición La Belleza Es Mía</p>
-					</li>
-					<li class="flex items-center p-3 rounded-sm gap-x-3">
-						<i class='bx bx-sm'></i>
-						<p class=" font-light"><span id="time">11:00 PM</span>: Programaciones Variadas</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<!-- Sección últimas noticias -->
-	<section class="mt-12">
-		<!-- Noticias -->
-		<div class="p-8 md:py-12 md:px-12 bg-lightestGreen w-full space-y-10">
-			<div class="w-full max-w-8xl">
-				<a href="<?php echo esc_url(get_permalink(get_page_by_path('noticias')));?>">
-					<div class="flex items-center justify-between text-2xl  text-brandGreen font-semibold hover:text-darkGreen/80 transition-all transition-duration-150">
-						<h2>Noticias Recientes</h2>
+	<section class="w-full bg-white">
+		<div class="w-full mx-auto max-w-[95%] px-12 py-30 bg-white">
+			<h2 data-aos="fade-right" class="mb-10 font-gothicExpanded text-4xl text-softGreen">Transmisión en Vivo</h2>
+			<div data-aos="fade-up" id="programacion" class="flex flex-col gap-x-12 gap-y-8 lg:flex-row">
+				<!-- Video -->
+				<div class="space-y-4 lg:min-h-96 lg:max-h-96">
+					<div class="ctn">
+						<video id="player" controls crossorigin playsinline class="lg:max-h-80">
+							<source src="https://angelistic.live:3785/hybrid/play.m3u8" type="application/vnd.apple.mpegurl">
+							<a>Video Oynatılamıyor</a>
+						</video>
 					</div>
-					<div class="w-full border-b pt-4 border-gray-200"></div>
-				</a>
+					<div class="bg-lightestGreen flex items-center gap-3 p-3 font-encodeSans text-softGreen text-lg font-semibold">
+						<i class="bx bxs-square"></i>
+						<span id="ahora" class="">En Vivo: <span class="text-black font-normal">Amaneciendo con TRN</span></span>
+					</div>
+				</div>
+				<!-- Programación -->
+				<div class="flex-grow lg:h-96">
+					<!-- title -->
+					<a href="<?php echo esc_url(get_permalink(get_page_by_path('programa')));?>" class="font-semibold font-encodeSans text-lg text-gray-600 hover:text-darkGreen/80 transition-all transition-duration-150">
+						<h3 class="mb-6">Programación de Hoy</h2>
+					</a>
+					<!-- descripción -->
+					<div id="programa-hoy" class="lg:overflow-y-scroll lg:max-h-80 w-full">
+						<ul class="space-y-6">
+							<li class="flex items-center pb-3 border-b rounded-sm gap-x-3">
+								<i class='bx bx-sm'></i>
+								<p class="font-light"><span id="time">7:00 AM - 9:00 AM</span>: Amaneciendo TRN</p>
+							</li>
+							<li class="flex items-center pb-3 border-b rounded-sm gap-x-3">
+								<i class='bx bx-sm'></i>
+								<p class="font-light"><span id="time">9:00 AM - 12:00 PM</span>: Documental</p>
+							</li>
+							<li class="flex items-center pb-3 border-b rounded-sm gap-x-3">
+								<i class='bx bx-sm'></i>
+								<p class="font-light"><span id="time">12:00 PM - 1:00 PM</span>: La Belleza Es Mía</p>
+							</li>
+							<li class="flex items-center pb-3 border-b rounded-sm gap-x-3">
+								<i class='bx bx-sm'></i>
+								<p class="font-light"><span id="time">1:00 PM - 3:00 PM</span>: Documental</p>
+							</li>
+							<li class="flex items-center pb-3 border-b rounded-sm gap-x-">
+								<i class='bx bx-sm'></i>
+								<p class="font-light"><span id="time">3:00 PM - 4:00 PM</span>: Tiempo de Amparo</p>
+							</li>
+							<li class="flex items-center pb-3 border-b rounded-sm gap-x-">
+								<i class='bx bx-sm'></i>
+								<p class="font-light"><span id="time">4:00 PM - 6:00 PM</span>: Documental</p>
+							</li>
+							<li class="flex items-center pb-3 border-b rounded-sm gap-x-3">
+								<i class='bx bx-sm'></i>
+								<p class="font-light"><span id="time">6:00 PM - 8:00 PM</span>: Comentando La Actualidad</p>
+							</li>
+							<li class="flex items-center pb-3 border-b rounded-sm gap-x-3">
+								<i class='bx bx-sm'></i>
+								<p class="font-light"><span id="time">8:00 PM</span>: Repetición La Belleza Es Mía</p>
+							</li>
+							<li class="flex items-center pb-3 border-b rounded-sm gap-x-3">
+								<i class='bx bx-sm'></i>
+								<p class="font-light"><span id="time">11:00 PM</span>: Programaciones Variadas</p>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
-			<div class="w-full max-w-8xl flex flex-col gap-y-3 gap-x-8 transition-all transition-duration-150 lg:flex-row">
-				<?php foreach ($posts_array as $index => $post) : ?>
-					<?php if ( $index == 0 ) : ?>
-						<a href="<?php echo esc_url($post['link']); ?>" class="basis-1/2">
-							<div class="bg-cover bg-center basis-4/6" style="background-image: url('<?php echo esc_url($post['imagen']); ?>');">
-								<div class="flex flex-col justify-end bg-black/50 p-5 h-80 gap-y-5">
-									<span class="uppercase w-fit  text-sm text-white pt-2 border-t border-white"><?php echo esc_html($post['categoria']);?></span>
-									<h3 class="w-[80%]  text-white text-2xl hover:underline"><?php echo esc_html($post['titulo']); ?></h3>
-									<span class=" font-light text-white"><?php echo esc_html($post['autor']);?> • <?php echo esc_html($post['fecha']); ?></span>
-								</div>
-							</div>
-						</a>
-					<?php elseif ( $index == 1 ) : ?>
-						<a href="<?php echo esc_url($post['link']); ?>" class="basis-1/2">
-							<div class="flex flex-col h-80 hover:scale-95 transition-all transition-duration-300">
-								<div class="bg-cover bg-center basis-4/6" style="background-image: url('<?php echo esc_url($post['imagen']); ?>');">
-								</div>
-								<div class="p-5 pl-0 flex flex-col gap-5">
-									<span class="uppercase w-fit  text-sm text-brandGreen pt-2 border-t border-brandGreen"><?php echo esc_html($post['categoria']);?></span>
-									<h3 class=" font-bold text-darkGreen text-xl md:text-2xl transition-all transition-duration-150 hover:underline"><?php echo esc_html($post['titulo']); ?></h3>
-									<span class=" font-light text-black/50"><?php echo esc_html($post['autor']);?> • <?php echo esc_html($post['fecha']); ?></span>
-								</div>
-							</div>		
-						</a>
-					<?php endif; ?>
-				<?php endforeach; ?>
+		</div>
+	</section>
+
+	<!-- Sección últimas noticias -->
+	<section id="noticias" class="w-full bg-lightestGreen">
+		<!-- Noticias -->
+		<div class="w-full mx-auto max-w-[95%] px-12 py-18 bg-lightestGreen">
+			<div class="w-full">
+				<div class="flex items-center justify-between mb-10">
+					<h2 data-aos="fade-right" class="font-gothicExpanded text-4xl text-softGreen">Noticias Recientes</h2>
+					<a 
+						data-aos="fade-top"
+						href="<?php echo esc_url(get_permalink(get_page_by_path('noticias')));?>"
+						class="py-3 px-6 bg-softGreen text-white rounded-full hover:bg-darkGreen"
+					>		
+						<span class="hidden text-white font-encodeSans md:block">Más noticias</span>
+						<span class="md:hidden"><i class='bx bx-link-external'></i></span>
+					</a>
+				</div>
 			</div>
-			<div class="w-full max-w-8xl lg:mt-0 flex flex-col gap-y-5 gap-x-4 lg:flex-row lg:justify-between">
+			<div class="w-full mt-6 flex flex-wrap gap-3">
 				<?php foreach ($posts_array as $index => $post) : ?>
-					<?php if ( $index == 2 || $index == 4 ) : ?>
-						<a href="<?php echo esc_url($post['link']); ?>" class="basis-1/2">
-							<div class="border-t border-lightGreen pt-5 flex flex-col gap-y-3 lg:border-none lg:pt-0 hover:scale-95 transition-all transition-duration-300">
-								<span class="uppercase  w-fit  text-sm text-brandGreen pt-2 lg:border-t border-brandGreen"><?php echo esc_html($post['categoria']);?></span>
-								<h3 class=" font-normal text-black text-lg transition-all transition-duration-300 hover:underline"><?php echo esc_html($post['titulo']); ?></h3>
-								<span class=" font-light text-black/50 text-sm"><?php echo esc_html($post['autor']);?> • <?php echo esc_html($post['fecha']); ?></span>
+					<a data-aos="fade-up" href="<?php echo esc_url($post['link']); ?>" class="md:basis-[49%] xl:basis-[24%] h-auto">	
+						<div class="card card-compact bg-white shadow-sm">
+							<figure class="hover:scale-95 transition-all transition-duration-300">
+								<img
+									src="<?php echo esc_url($post['imagen']); ?>"
+									class="w-full h-52 object-cover" 
+								/>
+							</figure>
+							<div class="card-body">
+								<div class="body-top bg-gray-100 w-fit py-3 px-6 rounded-full">
+									<span class="font-encodeSans text-xs font-light text-black"><?php echo esc_html($post['categoria']);?></span>
+								</div>
+								<div class="body-middle pt-5 pb-8 border-b border-gray-200 space-y-4">
+									<h3 class="font-encodeSans text-darkGreen text-lg pb-3 hover:underline"><?php echo esc_html($post['titulo']);?></h3>
+									<p class="text-lightText font-encodeSans"><?php echo esc_html($post['desc']);?></p>
+								</div>
+								<div class="body-bottom py-5">
+									<span class="text-brandGreen font-encodeSans text-xs"><?php echo esc_html($post['autor']);?> • <?php echo esc_html($post['fecha']); ?></span>
+								</div>
 							</div>
-						</a>
-					<?php endif; ?>
-					<?php if ( $index == 3 ) : ?>
-						<a href="<?php echo esc_url($post['link']); ?>" class="basis-1/2">
-							<div class="border-t border-lightGreen pt-5 flex flex-col gap-y-3 lg:pt-0 lg:border-t-0 lg:border-x lg:px-6 hover:scale-95 transition-all transition-duration-300">
-								<span class="uppercase w-fit  text-sm text-brandGreen pt-2 lg:border-t border-brandGreen"><?php echo esc_html($post['categoria']);?></span>
-								<h3 class=" font-normal text-black text-lg lg:w-[90%] transition-all transition-duration-300 hover:underline"><?php echo esc_html($post['titulo']); ?></h3>
-								<span class=" font-light text-black/50 text-sm"><?php echo esc_html($post['autor']);?> • <?php echo esc_html($post['fecha']); ?></span>
-							</div>
-						</a>
-					<?php endif; ?>
+						</div>
+					</a>
 				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
+	
+	<!-- Sección contacto -->
+	<section id="contacto" class="w-full bg-white">
+		<div class="w-full mx-auto max-w-[95%] px-12 py-30 bg-white">
+			<!-- Contact heading -->
+			<section data-aos="fade-up" class="space-y-6">
+					<h2 class="mb-10 font-gothicExpanded text-4xl text-softGreen">Conecta con nosotros</h2>
+					<p class="font-encodeSans text-black font-light text-sm md:text-lg leading-7">
+						¿Tienes preguntas, sugerencias o quieres colaborar con nosotros? 
+						En Teleradionorte, valoramos tu opinión y estamos 
+						aquí para escucharte. Contáctanos a través de 
+						nuestras redes sociales, llámanos o envíanos un 
+						mensaje y con gusto te atenderemos. 
+					</p>
+			</section>
+			<div class="w-full border-b border-lightGreen my-16"></div>
+			<!-- Contact info -->
+			<section class="flex flex-col gap-x-16 lg:flex-row">
+				<!-- Form -->
+				<form data-aos="fade-right" id="contact-form" class="space-y-4 lg:basis-1/2">
+					<h3 class="font-encodeSans font-semibold text-grayTitle text-xl">Envíanos un mensaje</h3>
+					<fieldset class="fieldset">
+						<label for="name" class="font-encodeSans text-grayTitle text-md mb-2">Nombre y Apellido</label>
+						<input id="name" name="name" type="text" class="input w-full text-grayTitle bg-stone-50 border" />
+					</fieldset>
+					<fieldset class="fieldset">
+						<label for="email" class="font-encodeSans text-grayTitle text-md mb-2">Correo electrónico</label>
+						<input id="email" name="email" type="email" class="input w-full text-grayTitle bg-stone-50 border" />
+					</fieldset>
+					<fieldset class="fieldset">
+						<label for="subject" class="font-encodeSans text-grayTitle text-md mb-2">Asunto</label>
+						<input id="subject" name="subject" type="text" class="input w-full text-grayTitle bg-stone-50 border" />
+					</fieldset>
+					<fieldset class="fieldset">
+						<label for="message" class="font-encodeSans text-grayTitle text-md mb-2">Comentario</label>
+						<textarea id="message" name="message" class="textarea w-full bg-stone-50 h-24 text-grayTitle"></textarea>
+					</fieldset>
+					<button type="submit" class="btn mt-2 shadow-none w-full font-encodeSans text-white bg-darkGreen transition-all transition-duration-150 hover:bg-darkGreen/90">Enviar Mensaje</button>
+					<div id="alert-message" role="alert" class="hidden alert alert-succes rounded-sm bg-lightGreen shadow-none border-0 text-black">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+						<span>Su mensaje ha sido enviado.</span>
+					</div>
+				</form>
+				<!-- Separator -->
+				<div class="w-full border-b border-lightGreen my-16 lg:hidden"></div>
+				<!-- More info -->
+				<section data-aos="fade-left" class="flex flex-col md:flex-row lg:flex-col gap-y-10 gap-x-16">
+					<div class="basis-1/2 space-y-10">
+						<div>
+							<h3 class="font-encodeSans font-semibold text-grayTitle text-xl mb-4">Síguenos en nuestras redes sociales</h3>
+							<ul class="space-y-1 text-sm md:text-lg">
+								<li>
+									<a href="https://www.facebook.com/teleradionorte?ref=embed_page" class="inline-flex items-center gap-x-2 font-encodeSans text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-facebook-circle text-grayTitle'></i> teleradionorte</a>
+								</li>
+								<li>
+									<a href="https://x.com/teleradionorte1" class="inline-flex items-center gap-x-2 font-encodeSans text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-twitter text-grayTitle'></i> @teleradionorte</a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/teleradionorte/" class="inline-flex items-center gap-x-2 font-encodeSans text-grayTitle transition-all transition-duration-300 hover:text-grayBg hover:underline"><i class='bx bxl-instagram-alt text-grayTitle'></i> @teleradionorte1</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="font-encodeSans font-semibold text-grayTitle text-xl mb-4">Envíanos un correo</h3>
+							<a href="mailto:teleradionorte@gmail.com" class="inline-flex items-center gap-x-2 font-encodeSans text-grayTitle transition-all transition-duration-300 hover:text-grayBg text-sm md:text-lg hover:underline"><i class='bx bxs-envelope text-grayTitle'></i> teleradionorte@hotmail.com</a>
+						</div>
+					</div>
+					<div class="basis-1/2 space-y-10">
+						<div class="space-y-3">
+							<h3 class="font-encodeSans font-semibold text-grayTitle text-xl mb-4">Llámanos</h3>
+							<p class="text-grayTitle font-encodeSans font-light text-sm md:text-lg">Disponibles Lunes a Viernes de 8 A.M a 5 P.M</p>
+							<span class="inline-flex items-center gap-x-2 font-encodeSans text-sm md:text-lg text-grayTitle"><i class='bx bxs-phone text-grayTitle'></i> +1 (809) 590-0144</span>
+						</div>
+						<div class="space-y-3">
+							<h3 class="font-encodeSans font-semibold text-grayTitle text-xl mb-4">Visítanos</h3>
+							<p class="text-grayTitle font-encodeSans font-light text-sm md:text-lg">Estamos ubicados en Santo Domingo Norte, Sector Los Palmares</p>
+							<a href="https://maps.app.goo.gl/LfPSG88UQsTnt5XDA" class="inline-flex items-center gap-x-2 font-encodeSans text-grayTitle transition-all transition-duration-300 text-sm md:text-lg hover:text-grayBg hover:underline"><i class='bx bxs-map text-grayTitle'></i> C. Amín Abel 3, S.D. 11404</a>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+	</section>				
+
 </main>
 
 <?php
 get_footer();
-
-// <?php echo esc_url(get_permalink(get_page_by_path('sobre-nosotros'))); ?> 

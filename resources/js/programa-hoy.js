@@ -34,12 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Determine "Now", "Earlier", or "Later"
         if (currentHour24 >= start24.hours && currentHour24 < end24.hours) {
             // Current program → "Now"
-            item.classList.add("gap-x-3", "bg-lightGreen");
+            item.classList.add("gap-x-3", "border-gray-200");
             icon.classList.add("bxs-circle", "text-green-600");
             programText.classList.add("text-green-600");
         } else if (start24.hours < currentHour24 || (start24.hours === currentHour24 && start24.minutes <= currentMinute)) {
             // Past program → "Earlier"
-            item.classList.add("gap-x-3", "bg-stone-50");
+            item.classList.add("gap-x-3", "border-gray-200");
             icon.classList.add("bxs-circle", "text-stone-200");
             programText.classList.add("text-stone-400");
 
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } else {
             // Future program → "Later"
-            item.classList.add("gap-x-3", "bg-stone-100");
+            item.classList.add("gap-x-3", "border-gray-200");
             icon.classList.add("bx-circle", "text-stone-300");
             programText.classList.add("text-stone-600");
 

@@ -39,7 +39,7 @@
   /* fonts */
   --font-gothicExpanded: "Special Gothic Expanded One", "sans-serif"; 
   --font-encodeSans: "Encode Sans Expanded", "sans-serif"; 
-  --font-antonio: "Antonio", "sans-serif"; 
+  --font-antonio: "Antonio", "sans-serif";
 }
 
 @layer base {

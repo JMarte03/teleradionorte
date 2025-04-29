@@ -25,6 +25,10 @@ module.exports = {
         grayTitle: "#6d6e71",
         grayBg: "#595959",
         brandTurquoise: "#026779"
+      },
+      flexBasis: {
+        '7/14': '49%',
+        'almost-1/4': '24%'
       }
     },
   },
