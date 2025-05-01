@@ -22,7 +22,7 @@
 <body class="antialiased bg-white">    
     <main class="bg-white p-12 space-y-7">
         <!-- Navegación -->
-        <div class="sticky top-0 z-[999] backdrop-blur breadcrumbs flex items-center justify-between lg:mb-20">
+        <div class="sticky top-0 z-[999] backdrop-blur breadcrumbs flex items-center justify-between mb-10">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-x-6">
 				<img src="<?php echo get_theme_file_uri('/resources/img/logo.png'); ?>" alt="Logo de Teleradio Norte" class="w-14 h-auto">
 				<span class="hidden md:block font-encodeSans text-darkGreen text-md">Teleradionorte</span>
@@ -32,7 +32,7 @@
                 <li>Lotería</li>
             </ul>
         </div>
-        <h1 class="mt-8 text-xl font-gothicExpanded text-brandGreen md:text-2xl md:mt-4">Resultados de todas las loterías dominicanas</h1>
+        <h1 class="mt-8 text-xl font-encodeSans font-bold text-brandGreen md:text-3xl md:mt-4">Resultados de todas las loterías dominicanas</h1>
         <p class="text-black font-encodeSans text-sm leading-6">
             Entérese de los números ganadores y resultados del Gana Más, 
             Lotería Nacional, Leidsa, Loto Leidsa, Loteka, Loteria 
@@ -198,5 +198,6 @@
             </section>
         </div>
     </main>
+    <script src="<?php echo get_theme_file_uri('/resources/js/loteria.js'); ?>"></script>
 
 <?php get_footer(); ?>

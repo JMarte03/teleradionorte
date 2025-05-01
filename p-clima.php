@@ -37,7 +37,7 @@
 <body class="antialiased bg-white">
     <main class="bg-white p-12">
         <!-- Navegación -->
-        <div class="sticky top-0 z-[999] backdrop-blur breadcrumbs flex items-center justify-between lg:mb-20">
+        <div class="sticky top-0 z-[999] backdrop-blur breadcrumbs flex items-center justify-between mb-10">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-x-6">
 				<img src="<?php echo get_theme_file_uri('/resources/img/logo.png'); ?>" alt="Logo de Teleradio Norte" class="w-14 h-auto">
 				<span class="hidden md:block font-encodeSans text-darkGreen text-md">Teleradionorte</span>
@@ -49,7 +49,7 @@
         </div>
         <!-- Clima de hoy -->
         <section class="mt-6 w-full space-y-5">
-            <h2 class="font-gothicExpanded text-softGreen text-xl md:text-2xl mb-10">Clima de Hoy</h2>
+            <h2 class="font-encodeSans font-bold text-softGreen text-xl md:text-3xl mb-10">Clima de Hoy</h2>
             <!-- Contenido -->
             <section class="flex flex-col gap-y-3 gap-x-3 lg:flex-row">
                 <!-- Display de ahora -->
@@ -106,7 +106,7 @@
         <div class="w-full border-b border-b-lightGreen mt-8 mb-16 lg:mt-16"></div>
         <!-- Clima de los próximos 6 días -->
         <section class="space-y-8">
-            <h2 class="font-gothicExpanded text-softGreen text-xl md:text-2xl">Pronóstico para los próximos 6 días</h2>
+            <h2 class="font-encodeSans font-bold text-softGreen text-xl md:text-3xl mb-10">Pronóstico para los próximos 6 días</h2>
             <div class="tomorrow"
                 data-location-id="031197"
                 data-language="EN"
