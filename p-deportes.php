@@ -48,7 +48,7 @@
 	<?php wp_head(); ?>
 </head>
 <body class="antialiased bg-white">
-	<main class="bg-white pb-12 pt-0">
+	<main class="min-h-screen bg-white pb-12 pt-0">
 		<!-- Navegación -->
 		<div class="sticky top-0 z-[999] backdrop-blur breadcrumbs flex items-center justify-between  pt-10 px-12 md:mb-5">
 			<a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-x-6">
@@ -71,5 +71,6 @@
 				<?php include 'partials/posts-galleryView.php' ;?>
 			</div>
 		</section>
+	</main>
 
 <?php get_footer(); ?>

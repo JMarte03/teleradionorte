@@ -131,6 +131,6 @@
             </div>
         </section>        
     </main>
+    <?php get_footer(); ?>
     <script src="<?php echo get_theme_file_uri('/resources/js/clima.js'); ?>"></script>
 
-<?php get_footer(); ?>

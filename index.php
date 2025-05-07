@@ -89,13 +89,13 @@
 
 	<!-- Sección programa -->
 	<section class="w-full bg-white">
-		<div class="w-full mx-auto max-w-[95%] px-12 py-30 bg-white">
+		<div class="w-full mx-auto px-12 py-30 bg-white">
 			<h2 data-aos="fade-right" class="mb-10 font-gothicExpanded text-4xl text-softGreen">Transmisión en Vivo</h2>
-			<div data-aos="fade-up" id="programacion" class="flex flex-col gap-x-12 gap-y-8 lg:flex-row">
+			<div data-aos="fade-up" id="programacion" class="flex flex-col gap-x-12 gap-y-8">
 				<!-- Video -->
-				<div class="space-y-4 lg:min-h-96 lg:max-h-96">
+				<div class="space-y-4">
 					<div class="ctn">
-						<video id="player" controls crossorigin playsinline class="lg:max-h-80">
+						<video id="player" controls crossorigin playsinline class="">
 							<source src="https://angelistic.live:3785/hybrid/play.m3u8" type="application/vnd.apple.mpegurl">
 							<a>Video Oynatılamıyor</a>
 						</video>
@@ -106,13 +106,13 @@
 					</div>
 				</div>
 				<!-- Programación -->
-				<div class="flex-grow lg:h-96">
+				<div class="flex-grow">
 					<!-- title -->
 					<a href="<?php echo esc_url(get_permalink(get_page_by_path('programa')));?>" class="font-semibold font-encodeSans text-lg text-gray-600 hover:text-darkGreen/80 transition-all transition-duration-150">
 						<h3 class="mb-6">Programación de Hoy</h2>
 					</a>
 					<!-- descripción -->
-					<div id="programa-hoy" class="lg:overflow-y-scroll lg:max-h-80 w-full">
+					<div id="programa-hoy" class="w-full">
 						<ul class="space-y-6">
 							<li class="flex items-center pb-3 border-b rounded-sm gap-x-3">
 								<i class='bx bx-sm'></i>

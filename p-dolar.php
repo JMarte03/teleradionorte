@@ -2,12 +2,44 @@
 /**
  * Template Name: Dolar
  */
-get_header();
 ?>
 
-<div class="bg-white px-12">
-    <h1 class="text-4xl font-bold text-green-600">Dólar</h1>
-    <p class="text-black font-hanken">Esta es la página del dólar</p>
-</div>
-
-<?php get_footer(); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+	<link rel="stylesheet" href="<?php echo get_theme_file_uri('resources/css/variants.css'); ?>">
+	<link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<?php wp_head(); ?>
+</head>
+<body class="antialiased bg-white">
+    <main class="bg-white min-h-screen p-12">
+        <!-- Navegación -->
+        <div class="sticky top-0 z-[999] backdrop-blur breadcrumbs flex items-center justify-between mb-10">
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-x-6">
+				<img src="<?php echo get_theme_file_uri('/resources/img/logo.png'); ?>" alt="Logo de Teleradio Norte" class="w-14 h-auto">
+				<span class="hidden md:block font-encodeSans text-darkGreen text-md">Teleradionorte</span>
+            </a>
+            <ul class="w-fit px-6 py-3 rounded-lg bg-gray-100 text-sm font-encodeSans">
+                <li class="text-gray-500 py-2 px-4 rounded-lg hover:underline-none hover:bg-gray-200"><a href="<?php echo esc_url(home_url('/')); ?>" class="no-underline">Inicio</a></li>
+                <li>Dólar</li>
+            </ul>
+        </div>
+        <section class="w-full">
+            <h1 class="text-softGreen text-2xl font-encodeSans mb-5 font-bold md:mb-10 md:text-3xl">Tasa del Día</h1>
+            <section id="ctn" class="space-y-5">
+               
+            </section>
+        </section>
+    </main>
+    
+    <?php get_footer(); ?>
+    <script src="<?php echo get_theme_file_uri('/resources/js/dolar.js'); ?>"></script>

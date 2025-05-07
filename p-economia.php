@@ -71,5 +71,6 @@
 				<?php include 'partials/posts-galleryView.php' ;?>
 			</div>
 		</section>
+	</main>
 
 <?php get_footer(); ?>

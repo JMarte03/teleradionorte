@@ -1,4 +1,4 @@
-	<footer id="colophon" class="relative bottom-0 bg-white w-full mt-20" role="contentinfo">
+	<footer id="colophon" class="w-full mt-20" role="contentinfo">
 		<!-- Boletín de noticias -->
 		<section class="p-12 flex flex-col gap-y-7 lg:flex-row lg:justify-between lg:items-center bg-brandGreen">
 			<div class="space-y-2 lg:w-[50%]">

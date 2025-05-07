@@ -21,7 +21,7 @@
 	<?php wp_head(); ?>
 </head>
 <body class="antialiased bg-white">
-    <main class="bg-white p-12">
+    <main class="bg-white min-h-screen p-12">
         <!-- Navegación -->
         <div class="sticky top-0 z-[999] backdrop-blur breadcrumbs flex items-center justify-between mb-10">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-x-6">
@@ -40,6 +40,5 @@
             </section>
         </section>
     </main>
+    <?php get_footer(); ?>
     <script src="<?php echo get_theme_file_uri('/resources/js/combustible.js'); ?>"></script>
-
-<?php get_footer(); ?>
